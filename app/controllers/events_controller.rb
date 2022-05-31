@@ -1,5 +1,16 @@
 class EventsController < ApplicationController
   def index
+    if params[:query].present?
+      sql_query = " \
+        events.name @@ :query \
+        OR events.description @@ :query \
+        OR events.sexe @@ :query \
+        OR events.origin @@ :query \
+      "
+      @events = policy_scope(Dwarf.where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @events = policy_scope(Dwarf.all)
+    end
     @events = Event.all
   end
 
@@ -11,8 +22,11 @@ class EventsController < ApplicationController
   end
 
   def create
+    p event_params
     @event = Event.new(event_params)
+    @event.user = current_user
 
+    # authorize @event
     if @event.save
       redirect_to events_path
     else

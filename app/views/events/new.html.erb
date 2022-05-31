@@ -1,0 +1,12 @@
+<div class="form-new-event">
+  <div class="banner-new-event">
+  <h1>Add a new event </h1>
+  </div>
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :descritpion %>
+    <%= f.input :start_date %>
+    <%= f.submit :submit %>
+  <% end %>
+</div>
