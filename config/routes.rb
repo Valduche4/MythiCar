@@ -15,9 +15,10 @@ Rails.application.routes.draw do
   resources :maintenances, only: :destroy
   resources :features, only: :destroy
 
-  resources :events do
+  resources :events, except: [:destroy] do
     resources :participations, only: [:create]
   end
+  resources :events, only: :destroy
 
   # resources :chatrooms, only: [:index, :show, :new, :create, :destroy] do
   #   resources :messages, only: [:create]
