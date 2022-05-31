@@ -1,0 +1,17 @@
+<div class="banner-events">
+  <h1>Events</h1>
+  <h3>Take a look at the events that might interest you</h3>
+  <div class="btn-add-event">
+    <%= link_to "Add a event", new_event_path %>
+  </div>
+</div>
+
+<div class="cards-events">
+  <% @events.each do |event| %>
+    <div class="card-trip-infos-events">
+      <div class="link-events-events">
+        <h2><%= link_to event.name, event_path(event), class: "name-index" %></h2>
+      </div>
+    </div>
+  <% end %>
+</div>
