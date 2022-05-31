@@ -1,5 +1,5 @@
 class PapersController < ApplicationController
-  before_action set_paper, only: [:show, :destroy]
+  before_action :set_paper, only: [:show, :destroy]
   def show
   end
 

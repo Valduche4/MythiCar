@@ -1,5 +1,5 @@
 class MaintenancesController < ApplicationController
-  before_action set_maintenance, only: [:show, :destroy]
+  before_action :set_maintenance, only: [:show, :destroy]
   def show
   end
 
