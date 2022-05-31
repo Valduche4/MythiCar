@@ -14,9 +14,9 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-
+    @car.user = current_user
     if @car.save
-      redirect_to cars_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class CarsController < ApplicationController
   def destroy
     @car.destroy
 
-    redirect_to cars_path
+    redirect_to user_path
   end
 
   private

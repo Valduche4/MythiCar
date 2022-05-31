@@ -1,0 +1,12 @@
+<div class="form-new-paper">
+  <div class="banner-new-paper">
+    <h1>Add a paper for your car</h1>
+  </div>
+    <%= simple_form_for [@car, @paper] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :valid_from %>
+      <%= f.input :valid_to %>
+      <%= f.input :authority %>
+      <%= f.submit :submit %>
+    <% end %>
+</div>
