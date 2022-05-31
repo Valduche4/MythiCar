@@ -1,0 +1,10 @@
+<div class="form-new-feature">
+  <div class="banner-new-feature">
+    <h1>Add some features</h1>
+  </div>
+    <%= simple_form_for [@car, @feature] do |f| %>
+      <%= f.input :spec %>
+      <%= f.input :last_date %>
+      <%= f.submit :submit %>
+    <% end %>
+</div>

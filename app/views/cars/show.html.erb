@@ -1,0 +1,33 @@
+<div>
+  <h3> <%= @car.brand %> </h3>
+  <ul>
+    <li><p> Model :<%= @car.model%></p></li>
+    <li><p>year : <%= @car.year %></p></li>
+    <li><p>Plate :<%= @car.plate %></p></li>
+  </ul>
+</div>
+
+<ul>
+  <% @car.papers.each do |paper| %>
+    <li><%= link_to paper.name, car_paper_path(paper) %></li>
+  <% end %>
+</ul>
+<%= link_to "Add papers", new_car_paper_path(@car) %>
+<br>
+
+<ul>
+  <% @car.features.each do |feature| %>
+    <li><%= link_to feature.spec, car_feature_path(feature) %></li>
+  <% end %>
+</ul>
+<%= link_to "Add features", new_car_feature_path(@car) %>
+<br>
+
+<ul>
+  <% @car.maintenances.each do |maintenance| %>
+    <li><%= link_to maintenance.title, car_maintenance_path(maintenance) %></li>
+  <% end %>
+</ul>
+<%= link_to "History", new_car_maintenance_path(@car) %>
+
+<%= link_to "Home", user_path %>

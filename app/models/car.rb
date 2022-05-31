@@ -4,4 +4,8 @@ class Car < ApplicationRecord
   validates :model, presence: true
   validates :year, presence: true
   validates :plate, presence: true
+
+  has_many :papers
+  has_many :maintenances
+  has_many :features
 end

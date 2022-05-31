@@ -12,7 +12,11 @@ class MaintenancesController < ApplicationController
     @maintenance = Maintenance.new(params_maintenance)
     @car = Car.find(params[:car_id])
     @maintenance.car = @car
-    @maintenance.save
+    if @maintenance.save
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -28,5 +32,4 @@ class MaintenancesController < ApplicationController
   def params_maintenance
     params.require(:maintenance).permit(:title, :done_date, :comment)
   end
-
 end
