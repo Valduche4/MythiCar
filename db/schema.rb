@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2022_05_31_140118) do
     t.string "specialty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "maintenances", force: :cascade do |t|
