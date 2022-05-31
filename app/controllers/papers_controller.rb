@@ -29,7 +29,7 @@ class PapersController < ApplicationController
   end
 
   def params_paper
-    params.require(:paper).permit(:name, :valid_from, :valid_to, :authority)
+    params.require(:paper).permit(:name, :valid_from, :valid_to, :authority, photo: [])
   end
 
 end
