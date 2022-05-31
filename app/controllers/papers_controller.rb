@@ -9,10 +9,14 @@ class PapersController < ApplicationController
   end
 
   def create
-    @paper = Paper.new(params_paper)
     @car = Car.find(params[:car_id])
+    @paper = Paper.new(params_paper)
     @paper.car = @car
-    @paper.save
+    if @paper.save
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -27,4 +31,5 @@ class PapersController < ApplicationController
   def params_paper
     params.require(:paper).permit(:name, :valid_from, :valid_to, :authority)
   end
+
 end

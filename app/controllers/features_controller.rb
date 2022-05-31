@@ -12,7 +12,11 @@ class FeaturesController < ApplicationController
     @feature = Feature.new(params_feature)
     @car = Car.find(params[:car_id])
     @feature.car = @car
-    @feature.save
+    if @feature.save
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -33,6 +37,6 @@ class FeaturesController < ApplicationController
   end
 
   def params_feature
-    params.require(:feature).permit(:type, :last_date)
+    params.require(:feature).permit(:spec, :last_date)
   end
 end
