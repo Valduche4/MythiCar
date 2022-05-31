@@ -1,16 +1,16 @@
 class EventsController < ApplicationController
   def index
-    if params[:query].present?
-      sql_query = " \
-        events.name @@ :query \
-        OR events.description @@ :query \
-        OR events.sexe @@ :query \
-        OR events.origin @@ :query \
-      "
-      @events = policy_scope(Dwarf.where(sql_query, query: "%#{params[:query]}%"))
-    else
-      @events = policy_scope(Dwarf.all)
-    end
+    # if params[:query].present?
+    #   sql_query = " \
+    #     events.name @@ :query \
+    #     OR events.description @@ :query \
+    #     OR events.sexe @@ :query \
+    #     OR events.origin @@ :query \
+    #   "
+    #   @events = policy_scope(Dwarf.where(sql_query, query: "%#{params[:query]}%"))
+    # else
+    #   @events = policy_scope(Dwarf.all)
+    # end
     @events = Event.all
   end
 
@@ -58,6 +58,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :address, :descritpion, :start_date)
+    params.require(:event).permit(:name, :address, :description, :start_date)
   end
 end
