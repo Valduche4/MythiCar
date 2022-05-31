@@ -1,5 +1,5 @@
 class FeaturesController < ApplicationController
-  before_action set_feature, only: [:show, :edit, :update, :destroy]
+  before_action :set_feature, only: [:show, :edit, :update, :destroy]
   def show
   end
 
