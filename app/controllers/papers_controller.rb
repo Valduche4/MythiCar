@@ -9,8 +9,8 @@ class PapersController < ApplicationController
   end
 
   def create
-    @car = Car.find(params[:car_id])
     @paper = Paper.new(params_paper)
+    @car = Car.find(params[:car_id])
     @paper.car = @car
     if @paper.save
       redirect_to car_path(@car)
