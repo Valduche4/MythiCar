@@ -9,12 +9,12 @@
 </div>
 <br>
 <br>
-<% if current_user == @event.participations.empty? %>
+<% if current_user.id == @event.participations || current_user.id %>
   <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
 <% else %>
  <p>You're already going</p>
-  number of participations:<%= @event.participations.count %>
 <% end %>
+number of participations:<%= @event.participations.count %>
 <br>
 <br>
 <%= link_to "🗑", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
