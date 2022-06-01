@@ -1,0 +1,6 @@
+<% @maintenances.each do |maintenance| %>
+  <%= link_to maintenance.title, car_maintenance_path(maintenance) %>
+<% end %>
+
+<%= link_to "Add a document", new_car_maintenance_path %>
+<p>lol</p>

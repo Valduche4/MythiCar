@@ -1,11 +1,16 @@
 class MaintenancesController < ApplicationController
   before_action :set_maintenance, only: [:show, :destroy]
+
+  def index
+    @maintenances = Maintenance.all
+  end
+
   def show
   end
 
   def new
-    @car = Car.find(params[:car_id])
     @maintenance = Maintenance.new
+    @car = Car.find(params[:car_id])
   end
 
   def create

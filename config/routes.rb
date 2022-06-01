@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :cars do
     resources :papers, only: [:show, :new, :create]
-    resources :maintenances, only: [:show, :new, :create]
+    resources :maintenances, only: [:index, :show, :new, :create]
     resources :features, only: [:show, :new, :create, :edit, :update]
   end
   resources :papers, only: :destroy
