@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
     # if params[:query].present?
     #   sql_query = " \
@@ -25,7 +26,6 @@ class EventsController < ApplicationController
     p event_params
     @event = Event.new(event_params)
     @event.user = current_user
-
     # authorize @event
     if @event.save
       redirect_to events_path

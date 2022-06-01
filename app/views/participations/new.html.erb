@@ -1,0 +1,8 @@
+<h1>Going ?</h1>
+
+<div class="container-going">
+  <%= simple_form_for [@user, @event] do |f| %>
+    <%= f.input :going %>
+    <%= f.submit :submit, "submit" %>
+  <% end %>
+</div>
