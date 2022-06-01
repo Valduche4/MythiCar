@@ -6,7 +6,8 @@ class GaragesController < ApplicationController
       {
         lat: garage.latitude,
         lng: garage.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { garage: garage })
+        info_window: render_to_string(partial: "info_window", locals: { garage: garage }),
+        # image_url: helpers.asset_url("/app/assets/images/MythiCar.png")
       }
     end
   end

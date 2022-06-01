@@ -30,6 +30,6 @@ class MaintenancesController < ApplicationController
   end
 
   def params_maintenance
-    params.require(:maintenance).permit(:title, :done_date, :comment)
+    params.require(:maintenance).permit(:title, :done_date, :comment, photos: [])
   end
 end

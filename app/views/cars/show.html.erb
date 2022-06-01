@@ -9,7 +9,7 @@
 
 <ul>
   <% @car.papers.each do |paper| %>
-    <li><%= link_to paper.name, car_paper_path(paper) %></li>
+    <li><%= link_to paper.name, car_paper_path(@car, paper) %></li>
   <% end %>
 </ul>
 <%= link_to "Add papers", new_car_paper_path(@car) %>
@@ -30,4 +30,4 @@
 </ul>
 <%= link_to "History", new_car_maintenance_path(@car) %>
 
-<%= link_to "Home", user_path %>
+<%= link_to "Home", user_path(current_user) %>
