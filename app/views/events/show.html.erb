@@ -1,1 +1,25 @@
-<h1>Hello</h1>
+<h1>An Event</h1>
+<div class="event-name">
+  <h2><%= @event.name %></h2>
+  address:<%= @event.address %>
+  <br>
+  description:<%= @event.description %>
+  <br>
+  starting time:<%= @event.start_date %>
+</div>
+<br>
+<br>
+  <% if @event.participations.find_by(user: current_user) == nil %>
+    <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
+  <% else %>
+      <p>You're already going</p>
+      <%= link_to "UNROLL", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+  <% end %>
+number of participations:<%= @event.participations.count %>
+<br>
+<br>
+<%= link_to "🗑", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
+<br>
+<%= link_to "✎", edit_event_path(@event) %>
+<br>
+<%= link_to "Back to index", events_path %>
