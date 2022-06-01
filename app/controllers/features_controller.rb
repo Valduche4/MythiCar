@@ -20,14 +20,21 @@ class FeaturesController < ApplicationController
   end
 
   def edit
+    @car = Car.find(params[:car_id])
   end
 
   def update
-    @feature.update(params_feature)
+    @car = Car.find(params[:car_id])
+    if @feature.update(params_feature)
+      redirect_to car_path(@car)
+    else
+      render :new
+    end
   end
 
   def destroy
     @feature.destroy
+    redirect_to car_path(@feature.car)
   end
 
   private
