@@ -4,11 +4,17 @@
 </div>
 
 <div>
+<ul>
   <% @user.cars.each do |car| %>
+  <li>
     <%= cl_image_tag car.photo.key, height: 75, width: 100, crop: :fill %>
     <%= link_to car.brand, car_path(car) %>
+    <%= link_to "✎", edit_car_path(car) %>
+    <%= link_to "delete", car_path(car), method: :delete, data: { confirm: "Are you sure?" }  %>
     <%= car.model %>
+  </li>
   <% end %>
+</ul>
 </div>
 
 <div>
