@@ -7,27 +7,24 @@
   </ul>
 </div>
 
+<br>
 <ul>
   <% @car.papers.each do |paper| %>
     <li><%= link_to paper.name, car_paper_path(@car, paper) %></li>
   <% end %>
 </ul>
 <%= link_to "Add papers", new_car_paper_path(@car) %>
-<br>
 
+<br>
 <ul>
   <% @car.features.each do |feature| %>
     <li><%= link_to feature.spec, car_feature_path(feature) %></li>
   <% end %>
 </ul>
 <%= link_to "Add features", new_car_feature_path(@car) %>
+
 <br>
+<%= link_to "History", car_maintenances_path(@car) %>
 
-<ul>
-  <% @car.maintenances.each do |maintenance| %>
-    <li><%= link_to maintenance.title, car_maintenance_path(maintenance) %></li>
-  <% end %>
-</ul>
-<%= link_to "History", new_car_maintenance_path(@car) %>
-
+<br>
 <%= link_to "Home", user_path(current_user) %>
