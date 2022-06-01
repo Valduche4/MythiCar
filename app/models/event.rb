@@ -6,5 +6,5 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
   validates :nbr_participant, presence: true
   has_many :users, through: :participation
-  has_many :participations
+  has_many :participations, dependent: :destroy
 end

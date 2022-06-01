@@ -4,8 +4,11 @@ class ParticipationsController < ApplicationController
     @participation = Participation.new(going: true)
     @participation.user = current_user
     @participation.event = @event
-    @participation.save
-    redirect_to events_path
-  end
 
+    if @participation.save
+      redirect_to events_path
+    else
+      render :new
+    end
+  end
 end
