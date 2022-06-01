@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # namespace :current_user do
-  #   resources :cars, only: :index
-  # end
+  get '/user' => "users#show", :as => :user_root
   resources :users, only: :show
   resources :cars do
     resources :papers, only: [:show, :new, :create]
