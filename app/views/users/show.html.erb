@@ -1,11 +1,12 @@
-<div class="banner-cars">
+<div>
   <h1>Happy to see you again</h1>
   <h3>My cars</h3>
 </div>
 
-<div class="cards-cars">
+<div>
   <% @user.cars.each do |car| %>
     <%= link_to car.brand, car_path(car) %>
+    <%= cl_image_tag car.photo.key, height: 75, width: 100, crop: :fill %>
   <% end %>
 </div>
 

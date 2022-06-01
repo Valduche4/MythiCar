@@ -1,11 +1,12 @@
-<div class="form-new-maintenance">
-  <div class="banner-new-maintenance">
+<div>
+  <div>
     <h1>Add new maintenance in the history</h1>
   </div>
     <%= simple_form_for [@car, @maintenance] do |f| %>
       <%= f.input :title %>
       <%= f.input :done_date %>
       <%= f.input :comment %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit :submit %>
     <% end %>
 </div>

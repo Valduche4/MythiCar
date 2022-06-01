@@ -9,8 +9,8 @@ class PapersController < ApplicationController
   end
 
   def create
-    @car = Car.find(params[:car_id])
     @paper = Paper.new(params_paper)
+    @car = Car.find(params[:car_id])
     @paper.car = @car
     if @paper.save
       redirect_to car_path(@car)
@@ -29,7 +29,7 @@ class PapersController < ApplicationController
   end
 
   def params_paper
-    params.require(:paper).permit(:name, :valid_from, :valid_to, :authority)
+    params.require(:paper).permit(:name, :valid_from, :valid_to, :authority, photo: [])
   end
 
 end
