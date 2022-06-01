@@ -2,6 +2,7 @@ class MaintenancesController < ApplicationController
   before_action :set_maintenance, only: [:show, :destroy]
 
   def index
+    @car = Car.find(params[:car_id])
     @maintenances = Maintenance.all
   end
 
