@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :events, except: [:destroy] do
     resources :participations, only: [:create]
   end
+  resources :participations, only: [:destroy]
   resources :events, only: :destroy
 
   # resources :chatrooms, only: [:index, :show, :new, :create, :destroy] do

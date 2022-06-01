@@ -7,4 +7,5 @@ class Event < ApplicationRecord
   validates :nbr_participant, presence: true
   has_many :users, through: :participation
   has_many :participations, dependent: :destroy
+  # has_many :participants_users, through: :participations, class_name: 'User', foreign_key: :user_id
 end

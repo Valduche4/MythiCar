@@ -9,11 +9,12 @@
 </div>
 <br>
 <br>
-<% if current_user.id == @event.participations || current_user.id %>
-  <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
-<% else %>
- <p>You're already going</p>
-<% end %>
+  <% if @event.participations.find_by(user: current_user) == nil %>
+    <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
+  <% else %>
+      <p>You're already going</p>
+      <%= link_to "UNROLL", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+  <% end %>
 number of participations:<%= @event.participations.count %>
 <br>
 <br>
