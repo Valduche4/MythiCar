@@ -20,6 +20,8 @@ class PapersController < ApplicationController
   end
 
   def destroy
+    @paper.destroy
+    redirect_to car_path(@paper.car)
   end
 
   private

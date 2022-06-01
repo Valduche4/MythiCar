@@ -19,7 +19,7 @@ class MaintenancesController < ApplicationController
     @car = Car.find(params[:car_id])
     @maintenance.car = @car
     if @maintenance.save
-      redirect_to car_path(@car)
+      redirect_to car_maintenances_path(@maintenance.car)
     else
       render :new
     end
@@ -27,6 +27,7 @@ class MaintenancesController < ApplicationController
 
   def destroy
     @maintenance.destroy
+    redirect_to car_maintenances_path(@maintenance.car)
   end
 
   private
