@@ -6,6 +6,8 @@
   description:<%= @event.description %>
   <br>
   starting time:<%= @event.start_date %>
+  <br>
+   <%= cl_image_tag @event.photo.key, height: 75, width: 100, crop: :fill %>
 </div>
 <br>
 <br>
@@ -13,7 +15,7 @@
     <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
   <% else %>
       <p>You're already going</p>
-      <%= link_to "UNROLL", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+      <%= link_to "finally I will not be able to go sorry", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
   <% end %>
 number of participations:<%= @event.participations.count %>
 <br>
