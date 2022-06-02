@@ -23,18 +23,18 @@ export default class extends Controller {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
 
       const customMarker = document.createElement("div")
-    // customMarker.className = "marker"
-    // customMarker.style.backgroundImage = `url('${marker.image_url}')`
-    // customMarker.style.backgroundSize = "contain"
-    // customMarker.style.width = "25px"
-    // customMarker.style.height = "25px"
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "25px"
+      customMarker.style.height = "25px"
+      // customMarker.style.backgroundColor
 
-    // customMarker ----->
-      new mapboxgl.Marker()
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)
-    });
+    })
   }
 
   #fitMapToMarkers() {
