@@ -1,30 +1,83 @@
 .banner-event{
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   background-size: cover;
   background-position: center;
   height: 500px;
   a {
+    color: #F3EFF5;
     text-decoration: none;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bolder;
+    opacity: .9;
   }
 }
 .banner-event h2 {
   color: #F3EFF5;
-  font-size: 50px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
   padding-left: 15px;
 }
 .banner-event h3 {
   color: #F3EFF5;
-  font-size: 25px;
-  opacity: .7;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 15px;
+  opacity: .9;
   padding: 20px;
   margin: 15px;
 }
 .btn-enroll {
-  color:#0A2E36;
+  margin: 15px;
+  font-family: 'Fira Sans', sans-serif;
+  color: #F3EFF5;
+  display: flex;
+  justify-content: center;
+  .link-btn-event{
+    text-decoration: none;
+    margin: 15px;
+    font-family: 'Fira Sans', sans-serif;
+    color: #F3EFF5;
+    border: 1px solid #F3EFF5;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    h4 {
+      font-size: 15px;
+      opacity: .9;
+    }
+  }
 }
+
 .banner-address-event {
   margin: 15px;
+}
+
+.description-event {
+  font-family: 'Fira Sans', sans-serif;
+  color: #0A2E36;
+  margin: 15px;
+}
+
+.link-event-technic {
+  margin: 15px;
+  font-family: 'Fira Sans', sans-serif;
+  color: #0A2E36;
+  display: flex;
+  justify-content: center;
+  a{
+    text-decoration: none;
+    margin: 15px;
+    font-family: 'Fira Sans', sans-serif;
+    color: #0A2E36;
+    border: 1px solid #0A2E36;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
 }
