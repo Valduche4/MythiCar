@@ -1,0 +1,21 @@
+.banner-event {
+  width: auto;
+  .background-img-event {
+    width: auto;
+    size: cover;
+    position: center;
+    padding: 150px 0;
+  }
+  .title-event{
+    h2{
+      color: green;
+    }
+    h3{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 25px;
+    }
+    .link-event{
+      text-decoration: none;
+    }
+  }
+}
