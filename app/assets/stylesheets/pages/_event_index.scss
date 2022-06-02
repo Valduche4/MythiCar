@@ -1,3 +1,22 @@
+.div2-event {
+  margin-left: 20px;
+  margin-right: 20px;
+  border-top: 7px solid #a91c1c;
+  border-right: 7px solid #a91c1c;
+  margin-top: none;
+  border-radius: 0px 5px 0px 0px;
+  p {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+  }
+  a{
+    font-weight: lighter;
+    font-family: 'Fira Sans', sans-serif;
+
+  }
+}
+
+
 .event-infos {
   display: flex;
   justify-content: space-between;
@@ -19,8 +38,6 @@
 
 .enroll-button {
   transition-duration: 0.4s;
-  background-color: white;
-  color: black;
   border: 2px solid #90BE6D;
   padding: 5px 10px;
   border-radius: 5px;
@@ -36,7 +53,6 @@
 .cancel-button {
   transition-duration: 0.4s;
   background-color: white;
-  color: black;
   border: 2px solid #a91c1c;
   padding: 5px 10px;
   border-radius: 5px;
