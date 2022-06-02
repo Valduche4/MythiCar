@@ -7,13 +7,15 @@
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #0A2E36;
+    color: #0A2E36;
   }
   h3 {
     font-family: 'Fira Sans', sans-serif;
     font-size: small;
     font-style: italic;
     text-align: center;
+    color: #0A2E36;
   }
 }
 
@@ -26,8 +28,18 @@
   border-radius: 0px 5px 0px 0px;
   p {
     font-family: 'Fira Sans', sans-serif;
-    font-weight: bold;
+    font-size: 28px;
   }
+  a{
+    color: white;
+    font-weight: lighter;
+    font-family: 'Fira Sans', sans-serif;
+
+  }
+}
+
+.marque {
+  margin-right: 10px;
 }
 
 .card-home {
@@ -44,26 +56,51 @@
   border-radius: 0px 0px 0px 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 10px;
-
+  position: relative;
   img {
     height: 180px;
     width: auto;
   }
 }
 
+.buton-home-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .buton-home {
   transition-duration: 0.4s;
   background-color: white;
   color: black;
-  border: 2px solid #90BE6D;
+  border: 2px solid #0A2E36;
   padding: 5px 10px;
-  border-radius: 5px;
-  color: #90BE6D;
+  border-radius: 50px;
+  color: #0A2E36;
   margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 20px;
 }
 
 .buton-home:hover {
-  background-color: #90BE6D;
+  background-color: #0A2E36;
   color: white;
+}
+
+.supp {
+  position: absolute;
+  top: -30px;
+  right: 7px;
+  font-weight: lighter;
+  transform: rotate(45deg);
+  a {
+    font-size: 38px;
+    color: white;
+  }
+}
+
+.supp:hover {
+  a {
+    color: #a91c1c;
+  }
 }
