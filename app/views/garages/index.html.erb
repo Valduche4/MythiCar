@@ -1,6 +1,9 @@
-<h1>Garages nearby</h1>
+<div class="div1-home">
+  <h1>Garages nearby</h1>
+  <h3>Find the professionals around you</h3>
+</div>
 
-<div style="width: 500px; height: 550px;"
+<div class="border-bg" style="width: 465px; height: 550px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
