@@ -3,7 +3,7 @@
   <h3>Take a look at the events that might interest you</h3>
 </div>
 
-<div class="div2-home">
+<div class="div2-event">
   <ul class ="list-unstyled">
     <% @events.each do |event| %>
     <li class="card-event">
@@ -23,6 +23,6 @@
   </ul>
 </div>
 
-<div>
+<div class="buton-home-class">
   <%= link_to "+ Add an event", new_car_path, class: "buton-home text-decoration-none" %>
 </div>
