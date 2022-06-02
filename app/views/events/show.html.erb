@@ -1,20 +1,23 @@
 <div class="container-events">
   <div class="banner-event" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @event.photo.key, crop: :fill %>')" >
-  </div>
-    <div class="banner-info-event">
+    <div class="banner-name-event">
       <h2><%= @event.name %></h2>
       <h3>
-      address:<%= @event.address %>
-      description:<%= @event.description %>
-      starting time:<%= @event.start_date %>
+        <div class="banner-address-event">
+          address:<%= @event.address %>
+          description:<%= @event.description %>
+          starting time:<%= @event.start_date %>
+        </div>
       </h3>
       <div class="link-event">
-        <% if @event.participations.find_by(user: current_user) == nil %>
-          <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
-        <% else %>
-          <p>You're already going</p>
-          <%= link_to "finally I will not be able to go sorry", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
-        <% end %>
+        <div class="btn-enroll">
+          <% if @event.participations.find_by(user: current_user) == nil %>
+            <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
+          <% else %>
+            <p>You're already going</p>
+            <%= link_to "finally I will not be able to go sorry", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+          <% end %>
+        </div>
         <p> number of participations:<%= @event.participations.count %></p>
         <div>
           <%= link_to "🗑", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
@@ -23,4 +26,5 @@
         </div>
      </div>
     </div>
+  </div>
 </div>

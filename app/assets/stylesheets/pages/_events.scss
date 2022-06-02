@@ -4,15 +4,27 @@
   background-size: cover;
   background-position: center;
   height: 500px;
+  a {
+    text-decoration: none;
+  }
 }
 .banner-event h2 {
+  color: #F3EFF5;
   font-size: 50px;
   font-weight: bold;
   margin: 0;
   padding-left: 15px;
 }
 .banner-event h3 {
+  color: #F3EFF5;
   font-size: 25px;
   opacity: .7;
+  padding: 20px;
+  margin: 15px;
+}
+.btn-enroll {
+  color:#0A2E36;
+}
+.banner-address-event {
   margin: 15px;
 }
