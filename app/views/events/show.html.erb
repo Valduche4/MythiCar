@@ -1,23 +1,41 @@
-<div class="banner-event" >
-  <div class="title-event">
-    <h2><%= @event.name %></h2>
-    <h3>address:<%= @event.address %></h3>
-    <h3>description:<%= @event.description %></h3>
-    <h3>starting time:<%= @event.start_date %></h3>
-    <div class="img-event">
-      <%= cl_image_tag @event.photo.key %>
+<div class="container-events">
+  <div class="banner-event" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @event.photo.key, crop: :fill %>')" >
+    <div class="banner-name-event">
+      <h2><%= @event.name %></h2>
+      <h3>
+        <div class="banner-address-event">
+          address:<%= @event.address %>
+          <br>
+          <br>
+          starting time: <%= @event.start_date.day %>/<%= @event.start_date.month %>/<%= @event.start_date.year %> at  <%= @event.start_date.hour %>:<%= @event.start_date.min %>
+        </div>
+      </h3>
+      <div class="link-event">
+        <div class="btn-enroll">
+          <% if @event.participations.find_by(user: current_user) == nil %>
+            <div class="link-btn-event">
+              <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
+            </div>
+          <% else %>
+            <div class="link-btn-event">
+              <h4>You're already going</h4>
+              <%= link_to "finally I will not be able to go sorry", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+            </div>
+          <% end %>
+        </div>
+        <h3> number of participations:<%= @event.participations.count %></h3>
+     </div>
     </div>
   </div>
 </div>
-<div class="link-event">
-  <% if @event.participations.find_by(user: current_user) == nil %>
-    <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
-  <% else %>
-      <p>You're already going</p>
-      <%= link_to "finally I will not be able to go sorry", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
-  <% end %>
-  <p> number of participations:<%= @event.participations.count %></p>
-  <%= link_to "🗑", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
-  <%= link_to "✎", edit_event_path(@event) %>
+<div class="description-event">
+  description:
+  <br>
+  <br>
+  <%= @event.description %>
+</div>
+<div class="link-event-technic">
+  <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
+  <%= link_to "Edit this event", edit_event_path(@event) %>
   <%= link_to "Back to index", events_path %>
 </div>
