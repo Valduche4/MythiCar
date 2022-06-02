@@ -32,7 +32,7 @@ car1.save
 car2 = Car.new(
   user: user,
   brand: "Jaguar",
-  model: "F-type",
+  model: "E-type",
   year: 1978,
   plate: "O-JAG-007"
 )
