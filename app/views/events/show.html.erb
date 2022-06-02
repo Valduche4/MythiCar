@@ -7,7 +7,7 @@
           address:<%= @event.address %>
           <br>
           <br>
-          starting time: <%= @event.start_date.day %>/<%= @event.start_date.month %>/<%= @event.start_date.year %> at  <%= @event.start_date.hour %>:<%= @event.start_date.min %>
+          The <%= @event.start_date.day %> <%= @event.start_date.strftime("%b") %> of <%= @event.start_date.year %> at <%= @event.start_date.hour %>:<%= @event.start_date.min %>
         </div>
       </h3>
       <div class="link-event">
@@ -18,8 +18,7 @@
             </div>
           <% else %>
             <div class="link-btn-event">
-              <h4>You're already going</h4>
-              <%= link_to "finally I will not be able to go sorry", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+              <%= link_to "Cancel participation", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
             </div>
           <% end %>
         </div>
@@ -35,7 +34,13 @@
   <%= @event.description %>
 </div>
 <div class="link-event-technic">
-  <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
-  <%= link_to "Edit this event", edit_event_path(@event) %>
-  <%= link_to "Back to index", events_path %>
+  <% if current_user == @event.user %>
+    <div class="link-delete-event">
+      <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
+      <%= link_to "Edit this event", edit_event_path(@event) %>
+    </div>
+  <% end %>
+  <div class="link-event-index">
+    <%= link_to "Back to index", events_path %>
+  </div>
 </div>
