@@ -28,8 +28,9 @@ export default class extends Controller {
       customMarker.style.backgroundSize = "contain"
       customMarker.style.width = "30px"
       customMarker.style.height = "30px"
-      customMarker.style.backgroundColor = "#2E8BC0"
+      customMarker.style.backgroundColor = "#0096FF"
       customMarker.style.borderRadius = "25%"
+      customMarker.style
 
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
