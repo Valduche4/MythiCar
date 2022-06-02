@@ -1,20 +1,22 @@
-<div>
-  <h1>Happy to see you again</h1>
-  <h3>My cars</h3>
+<div class="div1-home">
+  <h1>My Garage</h1>
+  <h3>Happy to see you again</h3>
 </div>
 
-<div>
-<ul>
-  <% @user.cars.each do |car| %>
-  <li>
-    <%= cl_image_tag car.photo.key, height: 75, width: 100, crop: :fill %>
-    <%= link_to car.brand, car_path(car) %>
-    <%= link_to "✎", edit_car_path(car) %>
-    <%= link_to "delete", car_path(car), method: :delete, data: { confirm: "Are you sure?" }  %>
-    <%= car.model %>
-  </li>
-  <% end %>
-</ul>
+<div class="div2-home">
+  <ul>
+    <% @user.cars.each do |car| %>
+    <li>
+      <div>
+        <p><%= cl_image_tag car.photo.key, height: 75, width: 100, crop: :fill %>
+        <%= link_to car.brand, car_path(car), class: "text-decoration-none" %>
+        <%= link_to "✎", edit_car_path(car), class: "text-decoration-none" %>
+        <%= link_to "+", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none"  %>
+        <%= car.model %></p>
+      </div>
+    </li>
+    <% end %>
+  </ul>
 </div>
 
 <div>
