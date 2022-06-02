@@ -4,15 +4,14 @@
 </div>
 
 <div class="div2-home">
-  <ul>
+  <ul class ="list-unstyled">
     <% @user.cars.each do |car| %>
     <li>
-      <div>
-        <p><%= cl_image_tag car.photo.key, height: 75, width: 100, crop: :fill %>
-        <%= link_to car.brand, car_path(car), class: "text-decoration-none" %>
-        <%= link_to "✎", edit_car_path(car), class: "text-decoration-none" %>
-        <%= link_to "+", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none"  %>
-        <%= car.model %></p>
+<div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key,crop: :fill %>')">
+        <p><%= link_to car.brand, car_path(car), class: "text-decoration-none text-white" %>
+        <%= car.model %>
+        <%= link_to "✎", edit_car_path(car), class: "text-decoration-none text-white" %>
+        <%= link_to "+", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none text-white"  %></p>
       </div>
     </li>
     <% end %>
