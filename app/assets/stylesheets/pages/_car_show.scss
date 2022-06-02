@@ -6,9 +6,23 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+.info-car {
+  padding: 0px 10px;
+  h3 {
+    font-family: 'Fira Sans', sans-serif;
+  }
+}
+
+.model-car {
+  display: flex;
+  justify-content: space-between;
+}
+
 .pics-car {
   height: 300px;
-  width: auto;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+  object-fit: cover;
 }
 
 
