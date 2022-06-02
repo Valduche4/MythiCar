@@ -1,17 +1,28 @@
-<div class="banner-events">
+<div class="div1-home">
   <h1>Events</h1>
   <h3>Take a look at the events that might interest you</h3>
-  <div class="btn-add-event">
-    <%= link_to "Add a event", new_event_path %>
-  </div>
 </div>
 
-<div class="cards-events">
-  <% @events.each do |event| %>
-    <div class="card-trip-infos-events">
-      <div class="link-events-events">
-        <h2><%= link_to event.name, event_path(event), class: "name-index" %></h2>
+<div class="div2-home">
+  <ul class ="list-unstyled">
+    <% @events.each do |event| %>
+    <li class="card-event">
+      <div class="card-home event-pic" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key,crop: :fill %>')">
+        <p><%= link_to event.name, event_path(event), class: "text-decoration-none text-white" %></p>
       </div>
-    </div>
-  <% end %>
+      <div class="event-infos">
+        <p>The <%= event.start_date.day %> <%= event.start_date.strftime("%b") %> of <%= event.start_date.year %> at <%= event.start_date.hour %>:<%= event.start_date.min %></p>
+        <% if event.participations.find_by(user: current_user) == nil %>
+            <%= link_to "ENROLL", event_participations_path(event), method: :post, class: "text-decoration-none enroll-button"  %>
+        <% else %>
+          <%= link_to "Cancel participation", participation_path(event.participations.find_by(user: current_user)), method: :delete , class: "text-decoration-none cancel-button" %>
+        <% end %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "+ Add an event", new_car_path, class: "buton-home text-decoration-none" %>
 </div>
