@@ -1,6 +1,7 @@
 class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :destroy]
   def show
+    @car = Car.find(params[:car_id])
   end
 
   def new

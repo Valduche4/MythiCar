@@ -3,24 +3,30 @@
   <h3>Be aware of all the last changes</h3>
 </div>
 
-<div class="cards-maint">
-  <% @maintenances.each do |maintenance| %>
-      <div class="card-product">
-        <div>
-          <%= cl_image_tag maintenance.photos[0].key, height: 100, width: 200, crop: :fill %>
+<% if @car.maintenances != [] %>
+  <div class="cards-maint">
+    <% @car.maintenances.each do |maintenance| %>
+        <div class="card-product">
+          <div>
+            <%= cl_image_tag maintenance.photos[0].key, height: 100, width: 200, crop: :fill %>
+          </div>
+          <div class="card-product-infos">
+            <h2><%= maintenance.title.capitalize %></h2>
+            <p>Done the <%= maintenance.done_date.day%> <%= maintenance.done_date.strftime("%b") %> <%= maintenance.done_date.year %></p>
+          </div>
+          <div class="dropdown-button">
+            <h4></h4>
+          </div>
         </div>
-        <div class="card-product-infos">
-          <h2><%= maintenance.title.capitalize %></h2>
-          <p>Done the <%= maintenance.done_date.day%> <%= maintenance.done_date.strftime("%b") %> <%= maintenance.done_date.year %></p>
-        </div>
-        <div class="dropdown-button">
-          <h4></h4>
-        </div>
-      </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<% end %>
 
 
 <div class="buton-home-class">
-  <%= link_to "Add a document", new_car_maintenance_path, class: "buton-home text-decoration-none" %>
+  <%= link_to "+ Add a document", new_car_maintenance_path, class: "buton-home text-decoration-none" %>
+</div>
+
+<div class="buton-home-class">
+  <%= link_to "Back to car", car_path(@car), class: "buton-home text-decoration-none" %>
 </div>
