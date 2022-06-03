@@ -1,45 +1,68 @@
 <div class="generale-car">
-  <div class="info-car">
     <%= cl_image_tag @car.photo.key, class: "pics-car" %>
+    <div class="edit-car">
+      <%= link_to "✎", edit_car_path(@car), class: "text-decoration-none text-white"  %>
+    </div>
+  <div class="info-car">
     <h3> <%= @car.brand %> </h3>
-    <ul>
-      <li><p> Model :<%= @car.model%></p></li>
-      <li><p>year : <%= @car.year %></p></li>
-      <li><p>Plate :<%= @car.plate %></p></li>
-      <li><%= link_to "✎", edit_car_path(@car) %></li>
-      <li><%= link_to "delete", car_path(@car), method: :delete, data: { confirm: "Are you sure?" }   %></li>
-    </ul>
+    <div class="model-car">
+      <p> Model : <%= @car.model%></p>
+      <p>Plate : <%= @car.plate %></p>
+      <p>year : <%= @car.year %></p>
+    </div>
   </div>
 
   <div class="feature-car">
-    <h5>Car's features</h5>
-    <ul>
+    <h5><%= @car.model %>'s status</h5>
       <% @car.features.each do |feature| %>
-        <li><%= feature.spec %> : <%= feature.last_date %> <%= link_to "✎",  edit_car_feature_path(@car, feature) %> <%= link_to "🗑",
-                                                                                                                          feature_path(feature),
-                                                                                                                          method: :delete,
-                                                                                                                          data: { confirm: "Are you sure?" } %></li>
+        <a href="<%= edit_car_feature_path(@car, feature) %>" class="text-decoration-none">
+          <div class="feature">
+              <div class="feature1 w-full">
+                <p><%= feature.spec %></p>
+              </div>
+              <div class="feature2">
+                <p><%= feature.last_date %></p>
+                <p>🟢</p>
+              </div>
+          </div>
+         </a>
       <% end %>
-    </ul>
-    <%= link_to "Add features", new_car_feature_path(@car), class: "buton-home" %>
+    <div class="div-btn-car">
+      <%= link_to "Add a feature", new_car_feature_path(@car), class: "buton-car text-decoration-none" %>
+    </div>
   </div>
 
-  <div class="paper-car">
-    <h5>Car's papers</h5>
-    <ul>
+
+  <div class="feature-car">
+    <h5><%= @car.model %>'s papers</h5>
       <% @car.papers.each do |paper| %>
-        <li><%= link_to paper.name, car_paper_path(@car, paper) %> <%= link_to "🗑",
-                                                                        paper_path(paper),
-                                                                        method: :delete,
-                                                                        data: { confirm: "Are you sure?" } %></li>
+        <a href="<%= car_paper_path(@car, paper) %>" class="text-decoration-none">
+          <div class="feature">
+              <div class="feature1 w-full">
+                <p><%= paper.name %></p>
+              </div>
+              <div class="feature2">
+                <p><%= paper.valid_to %></p>
+                <p>🟢</p>
+              </div>
+          </div>
+         </a>
       <% end %>
-    </ul>
-    <%= link_to "Add papers", new_car_paper_path(@car), class: "buton-home" %>
+    <div class="div-btn-car">
+    <%= link_to "Add a paper", new_car_paper_path(@car), class: "buton-car text-decoration-none" %>
+    </div>
   </div>
 
   <div class="history-btn">
-    <%= link_to "History", car_maintenances_path(@car) %>
+    <a href="car_maintenances_path(@car)" class="text-decoration-none">
+      <div class="">
+        <h5>History of your <%= @car.model %></h5>
+      </div>
+    </a>
   </div>
 
-  <%= link_to "Home", user_path(current_user), class: "buton-home" %>
+</div>
+<div class="d-flex justify-content-between" >
+  <%= link_to "Home", user_path(current_user), class: "buton-home text-decoration-none" %>
+  <%= link_to 'Delete this car', car_path(@car), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp text-decoration-none"   %>
 </div>

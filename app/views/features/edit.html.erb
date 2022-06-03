@@ -5,6 +5,7 @@
     <%= simple_form_for [@car, @feature] do |f| %>
       <%= f.input :spec %>
       <%= f.input :last_date %>
-      <%= f.submit :submit %>
+      <%= f.submit :submit, class: "buton-home m-0" %>
     <% end %>
 </div>
+<%= link_to "Delete", feature_path(@feature), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none buton-home m-0 m-t-1" %></p>
