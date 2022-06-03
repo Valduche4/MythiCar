@@ -7,7 +7,7 @@
   position: relative;
   border-top: 7px solid #a91c1c;
   border-right: 7px solid #a91c1c;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .pics-car {
@@ -132,19 +132,20 @@
   }
 }
 
+
 .buton-car-supp {
   transition-duration: 0.4s;
-  background-color: #F3EFF5;
-  border: 2px solid #a91c1c;
+  background-color: white;
+  border: 2px solid #a91c1c ;
   padding: 5px 10px;
   border-radius: 50px;
-  color: #a91c1c;
+  color: #a91c1c ;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 .buton-car-supp:hover {
-  background-color: #a91c1c;
-  color: #F3EFF5;
+  background-color: #a91c1c ;
+  color: white;
 }
