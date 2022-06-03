@@ -66,3 +66,6 @@
   <%= link_to "Home", user_path(current_user), class: "buton-home text-decoration-none" %>
   <%= link_to 'Delete this car', car_path(@car), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp text-decoration-none"   %>
 </div>
+
+<%= yield %>
+<%= render 'shared/footer' %>
