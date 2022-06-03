@@ -72,7 +72,7 @@ car4.save
 end
 
 user2 = User.create(email: "bg@bg.com", password: "123456")
-# user2.photo.attach(io: (URI.open("https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2021/04_14_miura/miura_cover.jpg")), filename: 'file.jpeg')
+user2.photo.attach(io: (URI.open("https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2021/04_14_miura/miura_cover.jpg")), filename: 'file.jpeg')
 user2.save
 
 event1 = Event.new(
