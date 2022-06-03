@@ -6,3 +6,37 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
+
+.div2-garage {
+  margin-left: 20px;
+  margin-right: 20px;
+  // border-top: 7px solid #a91c1c;
+  // border-right: 7px solid #a91c1c;
+  // border-left: 7px solid #a91c1c;
+  margin-top: none;
+  border-radius: 5px;
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 15px;
+  }
+  a{
+  font-weight: lighter;
+  font-family: 'Fira Sans', sans-serif;
+  transition-duration: 0.4s;
+  background-color: white;
+  color: #90BE6D;
+  border: 2px solid #90BE6D;
+  padding: 5px 30px;
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  }
+  a:hover {
+    background-color: #90BE6D;
+    color: white;
+  }
+}
