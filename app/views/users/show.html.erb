@@ -3,21 +3,23 @@
   <h3>Happy to see you again</h3>
 </div>
 
-<div class="div2-home">
-  <ul class ="list-unstyled">
-    <% @user.cars.each do |car| %>
-    <li>
-      <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key,crop: :fill %>')">
-        <%= link_to car.brand, car_path(car), class: "text-decoration-none marque" %>
-        <%= link_to car.model, car_path(car), class: "text-decoration-none" %>
-        <div class="supp">
-          <p><%= link_to "+", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none" %></p>
+<% if @user.cars != [] %>
+  <div class="div2-home">
+    <ul class ="list-unstyled">
+      <% @user.cars.each do |car| %>
+      <li>
+        <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path car.photo.key,crop: :fill %>')">
+          <%= link_to car.brand, car_path(car), class: "text-decoration-none marque" %>
+          <%= link_to car.model, car_path(car), class: "text-decoration-none" %>
+          <div class="supp">
+            <p><%= link_to "+", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none" %></p>
+          </div>
         </div>
-      </div>
-    </li>
-    <% end %>
-  </ul>
-</div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <div class="buton-home-class">
   <%= link_to "+ Add a car", new_car_path, class: "buton-home text-decoration-none" %>

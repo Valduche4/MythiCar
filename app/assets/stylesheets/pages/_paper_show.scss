@@ -1,0 +1,31 @@
+.infoz {
+  margin-inline: 20px;
+  border-top: 7px solid #0A2E36;
+  border-right: 7px solid #0A2E36;
+  border-radius: 0px 5px 0px 0px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+.paper-pic {
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 0px 0px 0px 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+  position: relative;
+  img {
+    height: 180px;
+    width: auto;
+  }
+}
