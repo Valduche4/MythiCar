@@ -8,4 +8,10 @@
       <%= f.submit :submit, class: "buton-home m-0" %>
     <% end %>
 </div>
-<%= link_to "Delete", feature_path(@feature), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none buton-home m-0 m-t-1" %></p>
+<div class="buton-home-class">
+  <%= link_to "Delete", feature_path(@feature), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none buton-home m-0 m-t-1" %></p>
+</div>
+<br>
+<div class="buton-home-class">
+  <%= link_to "Back to car", car_path(@car), class: "buton-home text-decoration-none" %>
+</div>
