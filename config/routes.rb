@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :events, except: [:destroy] do
     resources :participations, only: [:create]
+    post "/participations", to: "participations#enroll", as: :enroll
   end
   resources :participations, only: [:destroy]
   resources :events, only: :destroy
