@@ -11,13 +11,15 @@ require "faker"
 Garage.destroy_all
 User.destroy_all
 Car.destroy_all
-
+Event.destroy_all
 
 # user = User.create(username: "val", email: "hello@leo.com", password: "123456")
 
 adresses = ["Chaussée de boitsfort 140, Bruxelles", "Avenue Baron d'huart 35, Bruxelles", "Rue du merlo 200, Uccle", "becentral", "Chaussée de Malines 302, Bruxelles", "Avenue de tervuren 300, Bruxelles"]
 
-user = User.create(email: "hello@leo.com", password: "123456")
+user = User.new(email: "hello@leo.com", password: "123456")
+user.photo.attach(io: (URI.open("https://www.rtlboulevard.nl/sites/default/files/content/images/2020/05/12/avatar%201%20miljard%20dollar.jpg?itok=fcKwDgMY&offsetX=0&offsetY=0&cropWidth=1776&cropHeight=999&width=2048&height=1152&impolicy=dynamic")), filename: 'file.jpeg')
+user.save
 
 car1 = Car.new(
   user: user,
