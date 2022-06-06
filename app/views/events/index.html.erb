@@ -46,7 +46,7 @@
             <%= f.input :name %>
             <%= f.input :address %>
             <%= f.input :description %>
-            <%= f.input :start_date %>
+            <%= f.input :start_date, input_html: {data: {controller: "flatpickr"}, class: "date-flatpickr"}, as: :string %>
             <%= f.input :photo, as: :file %>
             <%= f.submit :submit %>
           <% end %>
