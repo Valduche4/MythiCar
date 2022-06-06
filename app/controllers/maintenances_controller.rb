@@ -4,6 +4,7 @@ class MaintenancesController < ApplicationController
   def index
     @car = Car.find(params[:car_id])
     @maintenances = Maintenance.all
+    @maintenance = Maintenance.new
   end
 
   def show

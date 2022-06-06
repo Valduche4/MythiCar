@@ -19,11 +19,11 @@
       <div class="btn-enroll">
         <% if @event.participations.find_by(user: current_user) == nil %>
           <div class="link-btn-event">
-            <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
+            <%= link_to "ENROLL", event_participations_path(@event), method: :post, class: "text-decoration-none"  %>
           </div>
         <% else %>
           <div class="link-btn-event">
-            <%= link_to "Cancel participation", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+            <%= link_to "Cancel participation", participation_path(@event.participations.find_by(user: current_user)), method: :delete, class: "text-decoration-none" %>
           </div>
         <% end %>
       </div>
@@ -35,15 +35,43 @@
       <%= @event.description %>
     </div>
   </div>
-  <div class="link-event-technic">
+  <div>
     <% if current_user == @event.user %>
-      <div class="link-delete-event">
-        <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
-        <%= link_to "Edit this event", edit_event_path(@event) %>
+      <div class="buton-home-class-event">
+        <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }, class: "buton-home text-decoration-none"%>
+        <button class="buton-home text-decoration-none" data-toggle="modal" data-target="#editEventModal">
+          Edit event
+        </button>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
+<div class="modal fade" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editEventModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-black" id="exampleModalLongTitle">Add a new car meeting</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-black">
+          <%= simple_form_for(@event) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :address %>
+            <%= f.input :description %>
+            <%= f.input :start_date %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <div class="container">
   <div class="container event"
@@ -56,24 +84,23 @@
       <% @event.messages.each do |message| %>
         <%= render "messages/message", message: message %>
       <% end %>
-    </div>
+     </div>
   </div>
 
-  <%= simple_form_for [@event, @message],
-    remote: true,
-    html: {data: {action: "ajax:success->event-subscription#resetForm"}, class: "d-flex" } do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "say something...",
-      wrapper_html: {class: "flex-grow-1"} %>
-    <%= f.submit "Send", class: "btn btn-primary" %>
-  <% end %>
+    <%= simple_form_for [@event, @message],
+      remote: true,
+      html: {data: {action: "ajax:success->event-subscription#resetForm"}, class: "d-flex" } do |f|
+    %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message ##{@event.name}",
+        wrapper_html: {class: "flex-grow-1"} %>
+      <%= f.submit "Send", class: "btn btn-primary" %>
+    <% end %>
 </div>
-
-    <div class="buton-home-class">
-      <%= link_to "Back to index", events_path, class: "buton-home text-decoration-none" %>
-    </div>
+        <div class="buton-home-class">
+          <%= link_to "Back to index", events_path, class: "buton-home text-decoration-none" %>
+        </div>
 
 <br>
 <br>

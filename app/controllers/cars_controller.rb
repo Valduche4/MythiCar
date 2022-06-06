@@ -6,6 +6,8 @@ class CarsController < ApplicationController
   end
 
   def show
+    @feature = Feature.new
+    @paper = Paper.new
   end
 
   def new
