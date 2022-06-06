@@ -14,8 +14,11 @@
 </div>
 
 
-<div class="buton-home-class">
+<div class="event-show-btn">
   <%= link_to "Back to car", car_path(@car), class: "buton-home text-decoration-none" %>
+  <%= link_to 'Delete this paper', paper_path(@paper), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp-modal text-decoration-none" %>
+
 </div>
+<br><br>
 <%= yield %>
 <%= render 'shared/footer' %>

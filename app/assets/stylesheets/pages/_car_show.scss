@@ -136,7 +136,7 @@
 .buton-car-supp {
   transition-duration: 0.4s;
   background-color: white;
-  border: 2px solid #a91c1c ;
+  border: 1px solid #a91c1c ;
   padding: 5px 10px;
   border-radius: 50px;
   color: #a91c1c ;
@@ -147,5 +147,34 @@
 
 .buton-car-supp:hover {
   background-color: #a91c1c ;
+  color: white;
+}
+
+.buton-car-supp-modal {
+  transition-duration: 0.4s;
+  background-color: white;
+  border: 1px solid #a91c1c ;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #a91c1c ;
+}
+
+.buton-car-supp-modal:hover {
+  background-color: #a91c1c ;
+  color: white;
+}
+
+.buton-home-modal {
+  transition-duration: 0.4s;
+  background-color: white;
+  border: 1px solid #0A2E36;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: #0A2E36;
+  margin-bottom: 15px;
+}
+
+.buton-home-modal:hover {
+  background-color: #0A2E36;
   color: white;
 }

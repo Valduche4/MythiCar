@@ -5,7 +5,7 @@
 
 <div class="div2-event">
   <ul class ="list-unstyled">
-    <% @events.each do |event| %>
+    <% @events.order('start_date ASC').each do |event| %>
     <li class="card-event">
       <div class="card-home event-pic" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path event.photo.key,crop: :fill %>')">
         <p><%= link_to event.name, event_path(event), class: "text-decoration-none text-white" %></p>
@@ -26,12 +26,14 @@
   </ul>
 </div>
 
-<div class="buton-home-class-event">
-  <button type="button" class="buton-home-event text-decoration-none" data-toggle="modal" data-target="#newEventModal">
+<div class="buton-home-class">
+  <button type="button" class="buton-home text-decoration-none" data-toggle="modal" data-target="#newEventModal">
     + Add an event
   </button>
 </div>
-
+<br>
+<br>
+<br>
 <div class="modal fade" id="newEventModal" tabindex="-1" role="dialog" aria-labelledby="newEventModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">

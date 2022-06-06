@@ -46,10 +46,11 @@
               </div>
               <div class="modal-body text-black">
                 <%= simple_form_for [@car, feature] do |f| %>
-                  <%= f.input :spec %>
+                  <%= f.input :spec, as: :select, collection: ["Brakes", "Oil", "Lights", "Tyres", "Windows"] %>
                   <%= f.input :last_date %>
-                  <%= f.submit :submit %>
+                  <%= f.submit :submit, class: "buton-home-modal" %>
                 <% end %>
+                <%= link_to 'Delete this paper', feature_path(feature), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp-modal text-decoration-none" %>
               </div>
             </div>
           </div>
@@ -74,7 +75,7 @@
         </div>
         <div class="modal-body text-black">
           <%= simple_form_for [@car, @feature] do |f| %>
-            <%= f.input :spec %>
+            <%= f.input :spec, as: :select, collection: ["Brakes", "Oil", "Lights", "Tyres", "Windows"] %>
             <%= f.input :last_date %>
             <%= f.submit :submit %>
           <% end %>
@@ -121,12 +122,12 @@
         </div>
         <div class="modal-body text-black">
           <%= simple_form_for [@car, @paper] do |f| %>
-            <%= f.input :name %>
+            <%= f.input :name, as: :select, collection: ["Certificate of conformity", "Insurance","Registration taxes", "Road taxes", "Technical control"] %>
             <%= f.input :valid_from %>
             <%= f.input :valid_to %>
             <%= f.input :authority %>
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <%= f.submit :submit %>
+            <%= f.submit :submit, class: "buton-home-modal" %>
           <% end %>
         </div>
       </div>
