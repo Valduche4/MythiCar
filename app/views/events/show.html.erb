@@ -9,10 +9,10 @@
         <%= @event.address %>
         <br>
         <br>
-        The <%= @event.start_date.day %> <%= @event.start_date.strftime("%b") %> of <%= @event.start_date.year %> at <%= @event.start_date.hour %>:<%= @event.start_date.min %>
+        The <%= @event.start_date.day %> of <%= @event.start_date.strftime("%b") %> <%= @event.start_date.year %>
         <br>
         <br>
-        Number of participations: <%= @event.participations.count %>
+         <%= @event.participations.count %> participants
       </div>
     </h3>
     <div class="link-event">
@@ -44,9 +44,6 @@
         </button>
       </div>
     <% end %>
-    <div class="link-event-index">
-      <%= link_to "Back to index", events_path, class: "text-decoration-none" %>
-    </div>
   </div>
 </div>
 
@@ -75,29 +72,34 @@
   </div>
 
 
-<div class="container-event"
-      data-controller="event-subscription"
-      data-event-subscription-event-id-value="<%= @event.id%>"
-      >
-  <h1>#<%= @event.name %></h1>
+<div class="container">
+  <div class="container event"
+        data-controller="event-subscription"
+        data-event-subscription-event-id-value="<%= @event.id%>"
+        >
+    <h1>#Discussion</h1>
 
-  <div class="messages" data-event-subscription-target="messages">
-    <% @event.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
-    <% end %>
+    <div class="messages" data-event-subscription-target="messages">
+      <% @event.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+     </div>
   </div>
-</div>
 
-<%= simple_form_for [@event, @message],
-  remote: true,
-  html: {data: {action: "ajax:success->event-subscription#resetForm"}, class: "d-flex" } do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@event.name}",
-    wrapper_html: {class: "flex-grow-1"} %>
-  <%= f.submit "Send", class: "btn btn-primary" %>
-<% end %>
+    <%= simple_form_for [@event, @message],
+      remote: true,
+      html: {data: {action: "ajax:success->event-subscription#resetForm"}, class: "d-flex" } do |f|
+    %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message ##{@event.name}",
+        wrapper_html: {class: "flex-grow-1"} %>
+      <%= f.submit "Send", class: "btn btn-primary" %>
+    <% end %>
+</div>
+        <div class="buton-home-class">
+          <%= link_to "Back to index", events_path, class: "buton-home text-decoration-none" %>
+        </div>
 
 <br>
 <br>
