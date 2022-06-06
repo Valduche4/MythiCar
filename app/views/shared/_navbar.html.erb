@@ -1,10 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+  <div class="navbar-nav mx-auto">
     <% if user_signed_in? %>
       <div class="logo-img">
         <%= link_to image_tag("logo_porsche.jpeg"), user_path(current_user), class: "navbar-link" %>
       </div>
-      <div class="nav-item dropdown">
+      <div class="avatar-dropdown">
         <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

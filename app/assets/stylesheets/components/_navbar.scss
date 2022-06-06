@@ -1,13 +1,31 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  // justify-content: space-between;
   background: white;
+  text-align: center;
+  position: relative;
+}
+// .logo-img {
+//   width: 70px;
+//   // display: flex;
+//   // justify-content: center;
+//   display: inline-block;
+// }
+
+.avatar-dropdown{
+  float: right !important;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+// .navbar-lewagon .navbar-collapse {
+// //   flex-grow: 0;
+// // }
 
 .navbar-lewagon .navbar-link img {
   width: 70px;
-  margin-left: 205px;
+  display: inline-block;
+
+  // display:flex ;
+  // justify-content: center;
 }
