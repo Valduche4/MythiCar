@@ -4,7 +4,8 @@
   background-position: center;
   padding: 67px 20px;
   background-image: asset-url("porsche_deb.jpeg"), linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
-  height: 700px;
+  background-attachment: fixed;
+  // height: 700px;
 }
 
 .banner h1 {
@@ -32,23 +33,6 @@
   padding-top: 136px;
 
 }
-
-.btn-homepage {
-  color: white;
-  font-family: 'Fira Sans', sans-serif;
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 30px;
-}
-  // margin: 0px 20px;
-
-
-.btn-homepage:hover {
-  background-color: white;
-  color: black;
-  text-decoration: none;
-}
-
 .banner p {
   a{
     font-size: 20px;
@@ -61,4 +45,53 @@
   text-align: center;
   font-size: 22px;
   padding-top: 46px;
+}
+
+.btn-homepage-sign {
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.btn-homepage-sign:hover {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+.btn-homepage-cars a {
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.btn-homepage-cars a:hover {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+.container-homepage {
+  text-align: center;
+  padding-top: 180px;
+  font-family: 'Fira Sans', sans-serif;
+  border: 5px #F3EFF5;
+  h2{
+    color: #F3EFF5;
+  }
+}
+
+.card-homepage{
+  // height: auto;
+  // width: 350px;
+  // align-items: center;
+  // padding: 10px;
+  // background-color: transparent;
+  // border: 5px #F3EFF5;
+  // color: #F3EFF5;
 }

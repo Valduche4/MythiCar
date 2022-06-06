@@ -2,6 +2,30 @@
   <div class="container">
     <h1>MythiCar</h1>
     <h6>Join the ride !</h6>
-    <p><a class="btn-homepage" href="/users/sign_up">Sign Up now</a></p>
+    <% if user_signed_in? %>
+      <div class="btn-homepage-cars">
+        <p><%= link_to "See My Cars", user_path(current_user) %></p>
+      </div>
+    <% else %>
+      <p><a class="btn-homepage-sign" href="/users/sign_up">Sign Up now</a></p>
+    <% end %>
+  </div>
+
+  <div class="container-homepage">
+    <h2>Our concept</h2>
+    <div class="card-homepage">
+      <div class="card-homepage-body">
+        <p>Hello</p>
+      </div>
+      <div class="card-homepage-body">
+        <p>Hello</p>
+      </div>
+      <div class="card-homepage-body">
+        <p>Hello</p>
+      </div>
+      <div class="card-homepage-body">
+        <p>Hello</p>
+      </div>
+    </div>
   </div>
 </div>
