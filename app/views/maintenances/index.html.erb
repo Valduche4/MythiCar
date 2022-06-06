@@ -4,19 +4,25 @@
 </div>
 
 <% if @car.maintenances != [] %>
-  <div class="cards-maint">
+  <div class="cards-maint" >
     <% @car.maintenances.each do |maintenance| %>
-        <div class="card-product">
-          <div>
-            <%= cl_image_tag maintenance.photos[0].key, height: 100, width: 200, crop: :fill %>
-          </div>
-          <div class="card-product-infos">
-            <h2><%= maintenance.title.capitalize %></h2>
-            <p>Done the <%= maintenance.done_date.day%> <%= maintenance.done_date.strftime("%b") %> <%= maintenance.done_date.year %></p>
-          </div>
-          <div class="dropdown-button">
-            <h4></h4>
-          </div>
+        <div class="card-product" data-controller="maintenance-card" data-maintenance-card-target="contain" >
+            <div class="rien-que-ca-flex">
+              <div>
+                <%= cl_image_tag maintenance.photos[0].key, height: 200, width: 200, crop: :fill %>
+              </div>
+              <div class="card-product-infos">
+                <h2><%= maintenance.title.capitalize %></h2>
+                <p>Done the <%= maintenance.done_date.day%> <%= maintenance.done_date.strftime("%b") %> <%= maintenance.done_date.year %></p>
+              </div>
+              <div class="dropdown-button">
+                <a class="caret-down" data-action="click->maintenance-card#revealContent"><h4 data-maintenance-card-target="swipe">⌄</h4></a>
+              </div>
+            </div>
+          <h6 class="d-none description" data-maintenance-card-target="content"> <strong>Description of the last maintencance: </strong>
+          <br>
+          <br>
+          <%= maintenance.comment %></h6>
         </div>
     <% end %>
   </div>
