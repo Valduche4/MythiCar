@@ -1,7 +1,6 @@
 .container-event {
   background-color: #0A2E36;
   margin: 20px;
-  border-radius: 0px 5px 0px 5px;
   color: white;
   font-family: 'Fira Sans', sans-serif;
   position: relative;
@@ -23,6 +22,7 @@
   margin-top: 0;
   font-weight: lighter;
   padding-bottom: 20px;
+  border-radius: 0px 0px 0px 5px;
   a{
     text-decoration: none;
     margin: 15px;
@@ -47,6 +47,8 @@
   margin-bottom: 0;
   border-top: 7px solid #a91c1c;
   border-right: 7px solid #a91c1c;
+  border-radius: 0px 5px 0px 0px;
+
   a {
     color: #F3EFF5;
     text-decoration: none;
