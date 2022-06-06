@@ -14,6 +14,7 @@
   margin-bottom: 20px;
   border-radius: 0px 0px 0px 5px;
   position: relative;
+  transition: 2s;
 }
 
 .card-product img {
@@ -45,13 +46,13 @@ h4 {
   position: absolute;
   top: 32px;
   right: 45px;
-  font-size: 35px;
+  font-size: 35px !important;
   color: black;
 }
 
 h4:hover {
   font-size: 40px;
-  top: 26px;
+  top: 30px;
 }
 
 
@@ -60,6 +61,22 @@ h4:hover {
   align-items: center;
 }
 
-.rien-que-ca-glisse {
 
+.expansion {
+  transition: 2s;
+  height: 350px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 18px !important;
+}
+
+.switch {
+  transform: rotate(180deg);
+  transition: 0.4s;
+  margin-top: 18px;
+}
+
+h6 {
+  padding-top: 15px;
+  margin-inline: 20px;
+  text-align: justify;
 }
