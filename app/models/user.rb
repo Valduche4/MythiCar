@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :participations, dependent: :destroy
   has_many :participated_events, through: :participations, class_name: 'Event', foreign_key: :event_id
-  has_many :chatrooms, through: :messages
+  # has_many :events, through: :messages
+  has_many :messages, dependent: :destroy
   has_one_attached :photo
 end

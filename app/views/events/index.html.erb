@@ -13,7 +13,7 @@
       <div class="event-infos">
         <div>
         <h5><%= link_to event.name, event_path(event), class: "text-decoration-none text-black" %></h5>
-        <p>The <%= event.start_date.day %> <%= event.start_date.strftime("%b") %> of <%= event.start_date.year %> at <%= event.start_date.hour %>:<%= event.start_date.min %></p>
+        <p>The <%= event.start_date.day %> of <%= event.start_date.strftime("%b") %> <%= event.start_date.year %></p>
         </div>
         <% if event.participations.find_by(user: current_user) == nil %>
             <%= link_to "ENROLL", event_enroll_path(event), method: :post, class: "text-decoration-none enroll-button"  %>
