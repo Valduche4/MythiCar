@@ -11,11 +11,10 @@
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
   margin-bottom: 20px;
   border-radius: 0px 0px 0px 5px;
-
+  position: relative;
+  transition: 2s;
 }
 
 .card-product img {
@@ -41,4 +40,43 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+h4 {
+  position: absolute;
+  top: 32px;
+  right: 45px;
+  font-size: 35px !important;
+  color: black;
+}
+
+h4:hover {
+  font-size: 40px;
+  top: 30px;
+}
+
+
+.rien-que-ca-flex {
+  display: flex;
+  align-items: center;
+}
+
+
+.expansion {
+  transition: 2s;
+  height: 350px;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 18px !important;
+}
+
+.switch {
+  transform: rotate(180deg);
+  transition: 0.4s;
+  margin-top: 18px;
+}
+
+h6 {
+  padding-top: 15px;
+  margin-inline: 20px;
+  text-align: justify;
 }
