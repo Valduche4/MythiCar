@@ -11,11 +11,9 @@
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
   margin-bottom: 20px;
   border-radius: 0px 0px 0px 5px;
-
+  position: relative;
 }
 
 .card-product img {
@@ -41,4 +39,27 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+h4 {
+  position: absolute;
+  top: 32px;
+  right: 45px;
+  font-size: 35px;
+  color: black;
+}
+
+h4:hover {
+  font-size: 40px;
+  top: 26px;
+}
+
+
+.rien-que-ca-flex {
+  display: flex;
+  align-items: center;
+}
+
+.rien-que-ca-glisse {
+
 }
