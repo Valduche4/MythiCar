@@ -65,9 +65,9 @@ user2.save
 
 event1 = Event.new(
   name: "GoodWood",
-  address: Faker::Address.full_address,
+  address: "Chaussée de boitsfort 140, Bruxelles",
   description: "Goodwood is a unique sporting Estate set in 12,000 acres of beautiful South Downs countryside. Owned by the Dukes of Richmond since 1697, it is has become famous for three of the biggest events in the social and sporting calendar: the Festival of Speed, the Qatar Goodwood Festival and Goodwood Revival.",
-  start_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+  start_date: Faker::Date.between(from: '2022-06-12', to: '2022-08-10'),
   user: user2
 )
 event1.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/2018-racing/alex-benwell-best-photos/31-revival2018_jaysonfong_0080.jpg?crop=(0,1039,4928,3014)&width=2600")), filename: 'file.jpeg')
@@ -75,9 +75,9 @@ event1.save
 
 event2 = Event.new(
   name: "Festival of Speed",
-  address: Faker::Address.full_address,
+  address: "Avenue Baron d'huart 35, Bruxelles",
   description: "Held in the beautiful parkland surrounding Goodwood House, the Festival of Speed presented by Mastercard is motorsport's ultimate summer garden party, an intoxicating celebration of the world's most glamorous sport. Nowhere else will you get so close to the cars and bikes as they blast up the Hillclimb track; nowhere else will you enjoy such unrestricted access to the machines and the drivers who made them famous.",
-  start_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+  start_date: Faker::Date.between(from: '2022-06-12', to: '2022-08-10'),
   user: user2
 )
 event2.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/mm/72mm_14_dominicjames_3148.jpg?crop=(0,1138,5760,3446)&width=1300")), filename: 'file.jpeg')
@@ -85,9 +85,9 @@ event2.save
 
 event3 = Event.new(
   name: "Goodwood Revival",
-  address: Faker::Address.full_address,
+  address: "Rue du merlo 200, Uccle",
   description: "The smell of engines mingles with the roar of iconic race cars at Goodwood Revival, a three-day September festival celebrating the halcyon days of motor racing with the accompanying glamour of 1940s, ’50s and ’60s.",
-  start_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+  start_date: Faker::Date.between(from: '2022-06-12', to: '2022-08-10'),
   user: user2
 )
 event3.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/revival_14_drewgibson_0263.jpg?crop=(0,873,5278,2988)&width=1300")), filename: 'file.jpeg')
@@ -95,9 +95,9 @@ event3.save
 
 event4 = Event.new(
   name: "Night ride in london",
-  address: Faker::Address.full_address,
+  address: "Chaussée de Malines 302, Bruxelles",
   description: "The world’s greatest historic motor race meeting, and the only sporting event of its kind to be staged entirely in a period theme. More than just an unrivalled weekend of historic racing, it is a whimsical step back in time; an immersive celebration of a less disposable world, where “make do and mend” was a way of life rather than a casual slogan.",
-  start_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+  start_date: Faker::Date.between(from: '2022-06-12', to: '2022-08-10'),
   user: user2
 )
 event4.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/2018-racing/alex-benwell-best-photos/10-revival2018_jaysonfong_0032.jpg?crop=(0,259,4928,3031)&width=1240")), filename: 'file.jpeg')
@@ -105,9 +105,9 @@ event4.save
 
 event5 = Event.new(
   name: "Classic films with classic cars",
-  address: Faker::Address.full_address,
+  address: "Avenue de tervuren 300, Bruxelles",
   description: "Viewers usually sit on camping chairs or blankets, but it will be our classic old cars for us. Some Hollywood world premieres were screened in outdoor cinemas – sometimes with the stars in attendance. Most screenings are free with some raising money for charities.",
-  start_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+  start_date: Faker::Date.between(from: '2022-06-12', to: '2022-08-10'),
   user: user2
 )
 event5.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/2021/highlights-updates/untitled.png?crop=(0,139,1334,889)&width=1240")), filename: 'file.jpeg')
