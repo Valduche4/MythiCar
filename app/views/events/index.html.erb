@@ -27,8 +27,33 @@
 </div>
 
 <div class="buton-home-class-event">
-  <%= link_to "+ Add an event", new_event_path, class: "buton-home-event text-decoration-none" %>
+  <button type="button" class="buton-home-event text-decoration-none" data-toggle="modal" data-target="#newEventModal">
+    + Add an event
+  </button>
 </div>
+
+<div class="modal fade" id="newEventModal" tabindex="-1" role="dialog" aria-labelledby="newEventModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-black" id="exampleModalLongTitle">Add a new car meeting</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-black">
+          <%= simple_form_for(@event) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :address %>
+            <%= f.input :description %>
+            <%= f.input :start_date %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <%= yield %>
 <%= render 'shared/footer' %>

@@ -12,10 +12,12 @@
     </div>
   </div>
 
+
+
   <div class="feature-car">
     <h5><%= @car.model %>'s status</h5>
       <% @car.features.each do |feature| %>
-        <a href="<%= edit_car_feature_path(@car, feature) %>" class="text-decoration-none">
+        <a class="text-decoration-none" data-toggle="modal" data-target="#modalFeature-<%= feature.id %>">
           <div class="feature">
               <div class="feature1 w-full">
                 <p><%= feature.spec %></p>
@@ -26,12 +28,53 @@
               </div>
           </div>
          </a>
+         <div class="modal fade" id="modalFeature-<%= feature.id %>" tabindex="-1" role="dialog" aria-labelledby="#modalFeature-<%= feature.id %>Title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-black" id="exampleModalLongTitle">Edit feature</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body text-black">
+                <%= simple_form_for [@car, feature] do |f| %>
+                  <%= f.input :spec %>
+                  <%= f.input :last_date %>
+                  <%= f.submit :submit %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
     <div class="div-btn-car">
-      <%= link_to "Add a feature", new_car_feature_path(@car), class: "buton-car text-decoration-none" %>
+      <button type="button" class="buton-car text-decoration-none" data-toggle="modal" data-target="#newFeatureModal">
+        Add a feature
+      </button>
     </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="newFeatureModal" tabindex="-1" role="dialog" aria-labelledby="newFeatureModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-black" id="exampleModalLongTitle">Add a feature to your car</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-black">
+          <%= simple_form_for [@car, @feature] do |f| %>
+            <%= f.input :spec %>
+            <%= f.input :last_date %>
+            <%= f.submit :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="feature-car">
     <h5><%= @car.model %>'s papers</h5>
@@ -49,7 +92,33 @@
          </a>
       <% end %>
     <div class="div-btn-car">
-    <%= link_to "Add a paper", new_car_paper_path(@car), class: "buton-car text-decoration-none" %>
+      <button type="button" class="buton-car text-decoration-none" data-toggle="modal" data-target="#newPaperModal">
+        Add a paper
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="newPaperModal" tabindex="-1" role="dialog" aria-labelledby="newPaperModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-black" id="exampleModalLongTitle">Add a paper to your car</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-black">
+          <%= simple_form_for [@car, @paper] do |f| %>
+            <%= f.input :name %>
+            <%= f.input :valid_from %>
+            <%= f.input :valid_to %>
+            <%= f.input :authority %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.submit :submit %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -66,6 +135,7 @@
   <%= link_to "Home", user_path(current_user), class: "buton-home text-decoration-none" %>
   <%= link_to 'Delete this car', car_path(@car), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp text-decoration-none"   %>
 </div>
+
 
 <%= yield %>
 <%= render 'shared/footer' %>
