@@ -13,9 +13,14 @@ Rails.application.routes.draw do
   resources :maintenances, only: :destroy
   resources :features, only: :destroy
 
+  # resources :chatrooms, only: :show do
+  #   resources :messages, only: :create
+  # end
+
   resources :events, except: [:destroy] do
     resources :participations, only: [:create]
     post "/participations/enroll", to: "participations#enroll", as: :enroll
+    resources :messages, only: :create
   end
   resources :participations, only: [:destroy]
   delete "/participations/:id/delete", to: "participations#delete", as: :delete

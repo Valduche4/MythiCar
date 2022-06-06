@@ -15,8 +15,6 @@ Event.destroy_all
 
 # user = User.create(username: "val", email: "hello@leo.com", password: "123456")
 
-adresses = ["Chaussée de boitsfort 140, Bruxelles", "Avenue Baron d'huart 35, Bruxelles", "Rue du merlo 200, Uccle", "becentral", "Chaussée de Malines 302, Bruxelles", "Avenue de tervuren 300, Bruxelles"]
-
 user = User.new(email: "hello@leo.com", password: "123456")
 user.photo.attach(io: (URI.open("https://www.rtlboulevard.nl/sites/default/files/content/images/2020/05/12/avatar%201%20miljard%20dollar.jpg?itok=fcKwDgMY&offsetX=0&offsetY=0&cropWidth=1776&cropHeight=999&width=2048&height=1152&impolicy=dynamic")), filename: 'file.jpeg')
 user.save
@@ -60,16 +58,6 @@ car4 = Car.new(
 )
 car4.photo.attach(io: File.open(URI.open("https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2021/04_14_miura/miura_cover.jpg")), filename: 'file.jpeg')
 car4.save
-
-5.times do
-  garage = Garage.new(
-    name: Faker::Name.name,
-    address: adresses.sample,
-    specialty: Faker::Vehicle.manufacture,
-    phone_number: Faker::PhoneNumber.cell_phone
-  )
-  garage.save
-end
 
 user2 = User.create(email: "bg@bg.com", password: "123456")
 user2.photo.attach(io: (URI.open("https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2021/04_14_miura/miura_cover.jpg")), filename: 'file.jpeg')
@@ -124,3 +112,84 @@ event5 = Event.new(
 )
 event5.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/2021/highlights-updates/untitled.png?crop=(0,139,1334,889)&width=1240")), filename: 'file.jpeg')
 event5.save
+
+
+garage1 = Garage.new(
+  name: "Classic 42",
+  address: "Av. Général Médecin Derache 122, 1050 Ixelles",
+  specialty: "Sportive car",
+  phone_number: 024756373
+)
+garage1.save
+
+garage2 = Garage.new(
+  name: "Garage Buckens",
+  address: "Rue Goffart 63, 1050 Ixelles",
+  specialty: "Porsche",
+  phone_number: 024747373
+)
+garage2.save
+
+garage3 = Garage.new(
+  name: "Mekabox",
+  address: "Chaussée de boitsfort 140, Bruxelles",
+  specialty: "MG",
+  phone_number: 0437263023
+)
+garage3.save
+
+garage4 = Garage.new(
+  name: "L'Atréac Motors",
+  address: "Rue des Palmiers 75, 1150 Woluwe-Saint-Pierre",
+  specialty: "Aston Martin",
+  phone_number: 024323344
+)
+garage4.save
+
+garage5 = Garage.new(
+  name: "Lekeux Classic Cars",
+  address: "Chaussée de Roodebeek 15, 1200 Woluwe-Saint-Lambert",
+  specialty: "Jaguar & Land rover",
+  phone_number: 023436374
+)
+garage5.save
+
+50.times do
+  participation = Participation.new(
+    user: user2,
+    event: event1
+  )
+  participation.save
+end
+
+73.times do
+  participation = Participation.new(
+    user: user2,
+    event: event2
+  )
+  participation.save
+end
+
+23.times do
+  participation = Participation.new(
+    user: user2,
+    event: event3
+  )
+  participation.save
+end
+
+12.times do
+  participation = Participation.new(
+    user: user2,
+    event: event4
+  )
+  participation.save
+end
+
+132.times do
+  participation = Participation.new(
+    user: user2,
+    event: event5
+  )
+  participation.save
+end

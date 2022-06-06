@@ -17,7 +17,8 @@
             <%= link_to "Garages", garages_path, class: "nav-link" %>
           <%# </li> %>
           <div class="nav-item dropdown">
-            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.email %></a>
+            <%# <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>

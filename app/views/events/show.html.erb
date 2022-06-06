@@ -48,5 +48,33 @@
   </div>
 </div>
 
+
+<div class="container event"
+      data-controller="event-subscription"
+      data-event-subscription-event-id-value="<%= @event.id%>"
+      >
+  <h1>#<%= @event.name %></h1>
+
+  <div class="messages" data-event-subscription-target="messages">
+    <% @event.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+</div>
+
+<%= simple_form_for [@event, @message],
+  remote: true,
+  html: {data: {action: "ajax:success->event-subscription#resetForm"}, class: "d-flex" } do |f|
+%>
+  <%= f.input :content,
+    label: false,
+    placeholder: "Message ##{@event.name}",
+    wrapper_html: {class: "flex-grow-1"} %>
+  <%= f.submit "Send", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+<br>
+<br>
 <%= yield %>
 <%= render 'shared/footer' %>
