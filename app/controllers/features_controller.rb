@@ -37,6 +37,10 @@ class FeaturesController < ApplicationController
     redirect_to car_path(@feature.car)
   end
 
+  def feature
+    
+  end
+
   private
 
   def set_feature
