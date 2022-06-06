@@ -1,31 +1,19 @@
 .navbar-lewagon {
-  // justify-content: space-between;
   background: white;
   text-align: center;
   position: relative;
+  margin: 5px;
 }
-// .logo-img {
-//   width: 70px;
-//   // display: flex;
-//   // justify-content: center;
-//   display: inline-block;
-// }
 
 .avatar-dropdown{
   float: right !important;
   position: absolute;
   top: 0;
   right: 0;
+  margin:5px;
 }
 
-// .navbar-lewagon .navbar-collapse {
-// //   flex-grow: 0;
-// // }
-
 .navbar-lewagon .navbar-link img {
-  width: 70px;
+  width: 90px;
   display: inline-block;
-
-  // display:flex ;
-  // justify-content: center;
 }
