@@ -1,3 +1,4 @@
+<% require 'date' %>
 <div class="generale-car">
     <%= cl_image_tag @car.photo.key, class: "pics-car" %>
     <div class="edit-car">
@@ -24,7 +25,13 @@
               </div>
               <div class="feature2">
                 <p><%= feature.last_date %></p>
-                <p>🟢</p>
+                <% if Date.today - feature.last_date >= 730%>
+                  <p>🔴</p>
+                <% elsif Date.today - feature.last_date >= 365 %>
+                  <p>🟠</p>
+                <% else %>
+                  <p>🟢</p>
+                <% end %>
               </div>
           </div>
          </a>
@@ -86,7 +93,11 @@
               </div>
               <div class="feature2">
                 <p><%= paper.valid_to %></p>
-                <p>🟢</p>
+                <% if paper.valid_to > Date.today %>
+                  <p>🟢</p>
+                <% else %>
+                  <p>🔴</p>
+                <% end %>
               </div>
           </div>
          </a>
