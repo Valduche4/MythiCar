@@ -1,9 +1,52 @@
+.container-event {
+  background-color: #0A2E36;
+  margin: 20px;
+  border-radius: 0px 5px 0px 5px;
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+  position: relative;
+  border-top: 7px solid #a91c1c;
+  border-right: 7px solid #a91c1c;
+  margin-bottom: 20px;
+  h3 {
+    font-weight: 100;
+  }
+}
+
+.name-event {
+  margin: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  color: #F3EFF5;
+  text-align: center;
+  background-color: #0A2E36;
+  border-right: 7px solid #a91c1c;
+  margin-top: 0;
+  font-weight: lighter;
+  padding-bottom: 20px;
+  a{
+    text-decoration: none;
+    margin: 15px;
+    font-family: 'Fira Sans', sans-serif;
+    color: #F3EFF5;
+    border: 1px solid #F3EFF5;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+}
+
 .banner-event{
   // display: flex;
   // justify-content: center;
   background-size: cover;
   background-position: center;
   height: 500px;
+  margin: 20px;
+  margin-bottom: 0;
+  border-top: 7px solid #a91c1c;
+  border-right: 7px solid #a91c1c;
   a {
     color: #F3EFF5;
     text-decoration: none;
@@ -16,18 +59,22 @@
   color: #F3EFF5;
   font-family: 'Fira Sans', sans-serif;
   font-size: 40px;
+  height: auto;
   font-weight: bold;
   margin: 0;
   padding-left: 15px;
+  text-align: center;
+  padding-right: 15px;
+  padding-top: 40px;
 }
-.banner-event h3 {
-  color: #F3EFF5;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 15px;
-  opacity: .9;
-  padding: 20px;
-  margin: 15px;
-}
+// .banner-event h3 {
+//   color: #F3EFF5;
+//   font-family: 'Fira Sans', sans-serif;
+//   font-size: 15px;
+//   font-weight: 900;
+//   padding: 20px;
+//   margin: 10px;
+// }
 .btn-enroll {
   margin: 15px;
   font-family: 'Fira Sans', sans-serif;
@@ -39,27 +86,34 @@
     margin: 15px;
     font-family: 'Fira Sans', sans-serif;
     color: #F3EFF5;
-    border: 1px solid #F3EFF5;
     padding: 8px 24px;
     border-radius: 50px;
     font-weight: lighter;
     opacity: 0.9;
     transition: opacity 0.3s ease;
-    h4 {
+    h3 {
       font-size: 15px;
       opacity: .9;
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: lighter;
     }
   }
 }
 
-.banner-address-event {
+.address-event {
   margin: 15px;
+  margin-top: 0;
+  font-weight: lighter;
+  opacity: 0.9;
+  font-family: 'Fira Sans', sans-serif;
+
 }
 
 .description-event {
   font-family: 'Fira Sans', sans-serif;
-  color: #0A2E36;
+  color: #F3EFF5;
   margin: 15px;
+  text-align: center;
 }
 
 .link-delete-event {
