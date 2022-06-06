@@ -3,7 +3,7 @@
     <h1>Add some features</h1>
   </div>
     <%= simple_form_for [@car, @feature] do |f| %>
-      <%= f.input :spec %>
+      <%= f.input :spec, as: :select %>
       <%= f.input :last_date %>
       <%= f.submit :submit %>
     <% end %>
