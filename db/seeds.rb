@@ -17,7 +17,7 @@ Event.destroy_all
 
 user = User.new(email: "hello@leo.com", password: "123456")
 user.photo.attach(io: (URI.open("https://www.rtlboulevard.nl/sites/default/files/content/images/2020/05/12/avatar%201%20miljard%20dollar.jpg?itok=fcKwDgMY&offsetX=0&offsetY=0&cropWidth=1776&cropHeight=999&width=2048&height=1152&impolicy=dynamic")), filename: 'file.jpeg')
-user.save
+user.save!
 
 car1 = Car.new(
   user: user,
@@ -27,7 +27,7 @@ car1 = Car.new(
   plate: "O-POR-342"
 )
 car1.photo.attach(io: File.open(URI.open("https://cdn.elferspot.com/wp-content/uploads/2018/12/ViRo-911-orange-27-2000x1334.jpg")), filename: 'file.jpeg')
-car1.save
+car1.save!
 
 car2 = Car.new(
   user: user,
@@ -37,7 +37,7 @@ car2 = Car.new(
   plate: "O-JAG-007"
 )
 car2.photo.attach(io: File.open(URI.open("https://www.topgear.com/sites/default/files/images/news-article/carousel/2021/03/4e631faa5da311f06eb2beec9c618731/1.jpg")), filename: 'file.jpeg')
-car2.save
+car2.save!
 
 car3 = Car.new(
   user: user,
@@ -47,7 +47,7 @@ car3 = Car.new(
   plate: "O-FER-939"
 )
 car3.photo.attach(io: File.open(URI.open("http://www.quartamarcia.it/wp-content/uploads/2015/06/ferrari_dino_1971_1.jpg")), filename: 'file.jpeg')
-car3.save
+car3.save!
 
 car4 = Car.new(
   user: user,
@@ -57,11 +57,11 @@ car4 = Car.new(
   plate: "O-LAM-321"
 )
 car4.photo.attach(io: File.open(URI.open("https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2021/04_14_miura/miura_cover.jpg")), filename: 'file.jpeg')
-car4.save
+car4.save!
 
 user2 = User.create(email: "bg@bg.com", password: "123456")
 user2.photo.attach(io: (URI.open("https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/news/2021/04_14_miura/miura_cover.jpg")), filename: 'file.jpeg')
-user2.save
+user2.save!
 
 event1 = Event.new(
   name: "GoodWood",
@@ -71,7 +71,7 @@ event1 = Event.new(
   user: user2
 )
 event1.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/2018-racing/alex-benwell-best-photos/31-revival2018_jaysonfong_0080.jpg?crop=(0,1039,4928,3014)&width=2600")), filename: 'file.jpeg')
-event1.save
+event1.save!
 
 event2 = Event.new(
   name: "Festival of Speed",
@@ -81,7 +81,7 @@ event2 = Event.new(
   user: user2
 )
 event2.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/mm/72mm_14_dominicjames_3148.jpg?crop=(0,1138,5760,3446)&width=1300")), filename: 'file.jpeg')
-event2.save
+event2.save!
 
 event3 = Event.new(
   name: "Goodwood Revival",
@@ -91,7 +91,7 @@ event3 = Event.new(
   user: user2
 )
 event3.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/revival_14_drewgibson_0263.jpg?crop=(0,873,5278,2988)&width=1300")), filename: 'file.jpeg')
-event3.save
+event3.save!
 
 event4 = Event.new(
   name: "Night ride in london",
@@ -101,7 +101,7 @@ event4 = Event.new(
   user: user2
 )
 event4.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/2018-racing/alex-benwell-best-photos/10-revival2018_jaysonfong_0032.jpg?crop=(0,259,4928,3031)&width=1240")), filename: 'file.jpeg')
-event4.save
+event4.save!
 
 event5 = Event.new(
   name: "Classic films with classic cars",
@@ -111,7 +111,7 @@ event5 = Event.new(
   user: user2
 )
 event5.photo.attach(io: File.open(URI.open("https://www.goodwood.com/globalassets/motorsport/revival/2021/highlights-updates/untitled.png?crop=(0,139,1334,889)&width=1240")), filename: 'file.jpeg')
-event5.save
+event5.save!
 
 
 garage1 = Garage.new(
@@ -120,7 +120,7 @@ garage1 = Garage.new(
   specialty: "Sportive car",
   phone_number: 024756373
 )
-garage1.save
+garage1.save!
 
 garage2 = Garage.new(
   name: "Garage Buckens",
@@ -128,7 +128,7 @@ garage2 = Garage.new(
   specialty: "Porsche",
   phone_number: 024747373
 )
-garage2.save
+garage2.save!
 
 garage3 = Garage.new(
   name: "Mekabox",
@@ -136,7 +136,7 @@ garage3 = Garage.new(
   specialty: "MG",
   phone_number: 0437263023
 )
-garage3.save
+garage3.save!
 
 garage4 = Garage.new(
   name: "L'Atréac Motors",
@@ -144,7 +144,7 @@ garage4 = Garage.new(
   specialty: "Aston Martin",
   phone_number: 024323344
 )
-garage4.save
+garage4.save!
 
 garage5 = Garage.new(
   name: "Lekeux Classic Cars",
@@ -152,14 +152,14 @@ garage5 = Garage.new(
   specialty: "Jaguar & Land rover",
   phone_number: 023436374
 )
-garage5.save
+garage5.save!
 
 50.times do
   participation = Participation.new(
     user: user2,
     event: event1
   )
-  participation.save
+  participation.save!
 end
 
 73.times do
@@ -167,7 +167,7 @@ end
     user: user2,
     event: event2
   )
-  participation.save
+  participation.save!
 end
 
 23.times do
@@ -175,7 +175,7 @@ end
     user: user2,
     event: event3
   )
-  participation.save
+  participation.save!
 end
 
 12.times do
@@ -183,7 +183,7 @@ end
     user: user2,
     event: event4
   )
-  participation.save
+  participation.save!
 end
 
 132.times do
@@ -191,5 +191,5 @@ end
     user: user2,
     event: event5
   )
-  participation.save
+  participation.save!
 end
