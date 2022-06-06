@@ -38,18 +38,44 @@
   <div class="link-event-technic">
     <% if current_user == @event.user %>
       <div class="link-delete-event">
-        <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }%>
-        <%= link_to "Edit this event", edit_event_path(@event) %>
+        <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }, class: "text-decoration-none"%>
+        <button class="text-decoration-none editt" data-toggle="modal" data-target="#editEventModal">
+          Edit event
+        </button>
       </div>
     <% end %>
     <div class="link-event-index">
-      <%= link_to "Back to index", events_path %>
+      <%= link_to "Back to index", events_path, class: "text-decoration-none" %>
     </div>
   </div>
 </div>
 
 
-<div class="container event"
+<div class="modal fade" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editEventModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-black" id="exampleModalLongTitle">Add a new car meeting</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-black">
+          <%= simple_form_for(@event) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :address %>
+            <%= f.input :description %>
+            <%= f.input :start_date %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container-event"
       data-controller="event-subscription"
       data-event-subscription-event-id-value="<%= @event.id%>"
       >

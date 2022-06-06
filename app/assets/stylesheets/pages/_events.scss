@@ -134,6 +134,19 @@
     opacity: 0.9;
     transition: opacity 0.3s ease;
   }
+
+  button{
+    text-decoration: none;
+    margin: 15px;
+    font-family: 'Fira Sans', sans-serif;
+    color: #0A2E36;
+    border: 1px solid #0A2E36;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
 }
 
 .link-event-index {

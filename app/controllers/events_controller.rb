@@ -13,6 +13,7 @@ class EventsController < ApplicationController
     #   @events = policy_scope(Dwarf.all)
     # end
     @events = Event.all
+    @event = Event.new
   end
 
   def show
