@@ -19,11 +19,11 @@
       <div class="btn-enroll">
         <% if @event.participations.find_by(user: current_user) == nil %>
           <div class="link-btn-event">
-            <%= link_to "ENROLL", event_participations_path(@event), method: :post  %>
+            <%= link_to "ENROLL", event_participations_path(@event), method: :post, class: "text-decoration-none"  %>
           </div>
         <% else %>
           <div class="link-btn-event">
-            <%= link_to "Cancel participation", participation_path(@event.participations.find_by(user: current_user)), method: :delete %>
+            <%= link_to "Cancel participation", participation_path(@event.participations.find_by(user: current_user)), method: :delete, class: "text-decoration-none" %>
           </div>
         <% end %>
       </div>
@@ -35,17 +35,18 @@
       <%= @event.description %>
     </div>
   </div>
-  <div class="link-event-technic">
+  <div>
     <% if current_user == @event.user %>
-      <div class="link-delete-event">
-        <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }, class: "text-decoration-none"%>
-        <button class="text-decoration-none editt" data-toggle="modal" data-target="#editEventModal">
+      <div class="buton-home-class-event">
+        <%= link_to "Delete this event ", event_path(@event), method: :delete, data: { confirm: "Are  you certain ?" }, class: "buton-home text-decoration-none"%>
+        <button class="buton-home text-decoration-none" data-toggle="modal" data-target="#editEventModal">
           Edit event
         </button>
       </div>
     <% end %>
   </div>
 </div>
+
 
 
 <div class="modal fade" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editEventModalTitle" aria-hidden="true">
