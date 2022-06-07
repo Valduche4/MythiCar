@@ -16,7 +16,7 @@
   font-size: 32px;
   font-weight: bold;
   text-align: center;
-  font-size: 55px;
+  font-size: 95px;
   opacity: 0.8;
 }
 
@@ -81,6 +81,8 @@
   border: 5px #F3EFF5;
   h2{
     color: #F3EFF5;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bolder;
   }
 }
 
@@ -94,6 +96,10 @@
   opacity: .9;
   margin: 45px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  h3 {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bolder;
+  }
 }
 .card-homepage-text {
   h3 {
@@ -109,5 +115,6 @@
     color: #F3EFF5;
     font-weight: bold;
     padding-top: 15px;
+    font-weight: lighter;
   }
 }

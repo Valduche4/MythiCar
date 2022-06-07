@@ -23,8 +23,35 @@
   <% end %>
 
   <div class="buton-home-class">
-    <%= link_to "+ Add a car", new_car_path, class: "buton-home text-decoration-none" %>
-</div>
+    <button class="buton-home text-decoration-none" data-toggle="modal" data-target="#addCarModal">
+            + Add a car
+    </button>
+  </div>
+
+
+  <div class="modal fade" id="addCarModal" tabindex="-1" role="dialog" aria-labelledby="addCarModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-black" id="exampleModalLongTitle">Add a new car</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-black">
+            <%= simple_form_for(@car) do |f| %>
+              <%= f.input :brand %>
+              <%= f.input :model %>
+              <%= f.input :year %>
+              <%= f.input :plate %>
+              <%= f.input :photo, as: :file %>
+              <%= f.submit :submit %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>
 <%= yield %>
 <%= render 'shared/footer' %>
