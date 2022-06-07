@@ -7,10 +7,12 @@
 
 .avatar-dropdown{
   float: right !important;
-  position: absolute;
+  position: absolute !important;
   top: 0;
   right: 0;
   margin:5px;
+  text-align: end;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-link img {
