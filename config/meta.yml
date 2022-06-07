@@ -1,5 +1,5 @@
 meta_product_name: "MythiCar"
 meta_title: "Mythicar - Let's keep the car moving!"
 meta_description: "Mythicar is an app to centralize every important informations about your old timer and to bound the old car's owners in a carefull community"
-meta_image: "logo_porsche.jpg" # should exist in `app/assets/images/`
+meta_image: "porsche.png" # should exist in `app/assets/images/`
 twitter_account: "@mythicar"
