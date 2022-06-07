@@ -210,3 +210,28 @@
   display: flex;
   justify-content: space-between;
 }
+
+.container-msg {
+  background-color: #0A2E36;
+  margin: 20px;
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+  border-top: 7px solid #a91c1c;
+  border-right: 7px solid #a91c1c;
+  margin-bottom: 20px;
+  border-radius: 0px 5px 0px 5px;
+  h1 {
+    font-family: 'Fira Sans', sans-serif;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 30px;
+  }
+}
+
+.messages {
+  padding: 5px 20px;
+}
+
+.box-msg {
+  padding: 10px 20px;
+}
