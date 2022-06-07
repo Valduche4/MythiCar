@@ -2,7 +2,9 @@
   <div class="generale-car mt-1">
       <%= cl_image_tag @car.photo.key, class: "pics-car" %>
       <div class="edit-car">
-        <%= link_to "✎", edit_car_path(@car), class: "text-decoration-none text-white"  %>
+        <button type="button" class="editcar-modal" data-toggle="modal" data-target="#editCarModal">
+          ✎
+        </button>
       </div>
     <div class="info-car">
       <h3> <%= @car.brand %> </h3>
@@ -13,7 +15,29 @@
       </div>
     </div>
 
-
+    <!-- Modal -->
+    <div class="modal fade" id="editCarModal" tabindex="-1" role="dialog" aria-labelledby="editCarModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-black" id="exampleModalLongTitle">Add a feature to your car</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-black">
+            <%= simple_form_for(@car) do |f| %>
+              <%= f.input :brand %>
+              <%= f.input :model %>
+              <%= f.input :year %>
+              <%= f.input :plate %>
+              <%= f.input :photo, as: :file %>
+              <%= f.submit :submit %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="feature-car">
       <h5><%= @car.model %>'s status</h5>
