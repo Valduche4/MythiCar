@@ -5,8 +5,8 @@
   padding: 67px 20px;
   background-image: asset-url("porsche_deb.jpeg"), linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
   background-attachment: fixed;
-  // height: 700px;
 }
+
 
 .banner h1 {
   margin: 0;
@@ -15,7 +15,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
-  // margin: 0px 20px;
   text-align: center;
   font-size: 55px;
   opacity: 0.8;
@@ -27,7 +26,6 @@
   font-family: 'Fira Sans', sans-serif;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  // margin: 0px 20px;
   text-align: center;
   font-size: 22px;
   padding-top: 136px;
@@ -86,12 +84,30 @@
   }
 }
 
-.card-homepage{
-  // height: auto;
-  // width: 350px;
-  // align-items: center;
-  // padding: 10px;
-  // background-color: transparent;
-  // border: 5px #F3EFF5;
-  // color: #F3EFF5;
+.card-homepage-body{
+  color: #F3EFF5;
+  // border: 1px solid #F3EFF5;
+  font-family: 'Fira Sans', sans-serif;
+  border-radius: 15px;
+  background-color: #0A2E36;
+  padding: 40px;
+  opacity: .9;
+  margin: 45px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.card-homepage-text {
+  h3 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #F3EFF5;
+    opacity: .9;
+    filter: brightness(90%);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  p {
+    font-size: 16px;
+    color: #F3EFF5;
+    font-weight: bold;
+    padding-top: 15px;
+  }
 }
