@@ -72,12 +72,12 @@
     </div>
 
 
-  <div class="container">
-    <div class="container event"
+  <div class="container-msg">
+    <div class="container-title-msg"
           data-controller="event-subscription"
-          data-event-subscription-event-id-value="<%= @event.id%>"
+          data-event-subscription-event-id-value="<%= @event.id %>"
           >
-      <h1>#Discussion</h1>
+      <h1 class="title-discu">#Discussion</h1>
 
       <div class="messages" data-event-subscription-target="messages">
         <% @event.messages.each do |message| %>
@@ -88,18 +88,18 @@
 
       <%= simple_form_for [@event, @message],
         remote: true,
-        html: {data: {action: "ajax:success->event-subscription#resetForm"}, class: "d-flex" } do |f|
+        html: {data: {action: "ajax:success->event-subscription#resetForm"}, class: "box-msg" } do |f|
       %>
         <%= f.input :content,
           label: false,
           placeholder: "Message ##{@event.name}",
-          wrapper_html: {class: "flex-grow-1"} %>
-        <%= f.submit "Send", class: "btn btn-primary" %>
+          wrapper_html: {class: ""} %>
+        <%= f.submit "Send", class: "buton-car mt-2" %>
       <% end %>
   </div>
-          <div class="buton-home-class">
-            <%= link_to "Back to index", events_path, class: "buton-home text-decoration-none" %>
-          </div>
+  <div class="buton-home-class">
+    <%= link_to "Back to index", events_path, class: "buton-home text-decoration-none" %>
+  </div>
 </div>
 <br>
 <%= yield %>
