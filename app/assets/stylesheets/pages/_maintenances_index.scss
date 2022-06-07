@@ -30,7 +30,7 @@
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -38,8 +38,24 @@
   font-family: 'Fira Sans', sans-serif;
 }
 
+.card-product{
+  h6{
+    font-family: 'Fira Sans', sans-serif;
+  }
+}
+
 .card-product .card-product-infos {
   padding: 16px;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.card-product-infos {
+  h2{
+    font-family: 'Fira Sans', sans-serif;
+  }
+  p{
+    font-family: 'Fira Sans', sans-serif;
+  }
 }
 
 h4 {
