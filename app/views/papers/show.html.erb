@@ -1,24 +1,24 @@
-<div class="div1-home">
-  <h1><%= @paper.name %></h1>
-  <h3>Important informations</h3>
+<div class="all">
+  <div class="div1-home">
+    <h1><%= @paper.name %></h1>
+    <h3>Important informations</h3>
+  </div>
+
+  <div class="infoz">
+    <p> <strong>Authority: </strong><%= @paper.authority.capitalize %></p>
+    <p><strong> Valid from: </strong> <%= @paper.valid_from.day %> <%= @paper.valid_from.strftime("%B") %> <%= @paper.valid_from.year %></p>
+    <p><strong> Valid to: </strong> <%= @paper.valid_to.day %> <%= @paper.valid_to.strftime("%B") %> <%= @paper.valid_to.year %></p>
+    <p> <strong> Digital version :</strong></p>
+      <% @paper.photos.each do |photo| %>
+        <div class="paper-pic" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= cl_image_path photo.key,crop: :fill %>')"></div>
+      <% end %>
+  </div>
+
+  <div class="event-show-btn">
+    <%= link_to "Back to car", car_path(@car), class: "buton-home text-decoration-none" %>
+    <%= link_to 'Delete this paper', paper_path(@paper), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp text-decoration-none" %>
+  </div>
 </div>
 
-<div class="infoz">
-  <p> <strong>Authority: </strong><%= @paper.authority.capitalize %></p>
-  <p><strong> Valid from: </strong> <%= @paper.valid_from.day %> <%= @paper.valid_from.strftime("%B") %> <%= @paper.valid_from.year %></p>
-  <p><strong> Valid to: </strong> <%= @paper.valid_to.day %> <%= @paper.valid_to.strftime("%B") %> <%= @paper.valid_to.year %></p>
-  <p> <strong> Digital version :</strong></p>
-    <% @paper.photos.each do |photo| %>
-      <div class="paper-pic" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('<%= cl_image_path photo.key,crop: :fill %>')"></div>
-    <% end %>
-</div>
-
-
-<div class="event-show-btn">
-  <%= link_to "Back to car", car_path(@car), class: "buton-home text-decoration-none" %>
-  <%= link_to 'Delete this paper', paper_path(@paper), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp-modal text-decoration-none" %>
-
-</div>
-<br><br>
 <%= yield %>
 <%= render 'shared/footer' %>
