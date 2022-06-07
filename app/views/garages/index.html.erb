@@ -1,13 +1,15 @@
-<div class="div1-home">
-  <h1>Garages nearby</h1>
-  <h3>Find the professionals around you</h3>
-</div>
+ <div class="all">
+  <div class="div1-home">
+    <h1>Garages nearby</h1>
+    <h3>Find the professionals around you</h3>
+  </div>
 
-<div class="border-bg" style="width: auto; height: 550px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="border-bg" style="width: auto; height: 550px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <br>
 </div>
-
 <%= yield %>
 <%= render 'shared/footer' %>

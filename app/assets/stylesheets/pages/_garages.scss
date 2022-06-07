@@ -1,8 +1,12 @@
 .border-bg {
   border-top: 7px solid #a91c1c;
-  border: 7px solid #a91c1c;
-  border-radius: 5px 5px 5px 5px;
+  border-right: 7px solid #a91c1c;
+  // border-left: 0.01px solid #3b565c;
+  // border-bottom: 0.01px solid #3b565c;
+  // border: 7px solid #a91c1c;
+  border-radius: 0px 5px 0px 5px;
   margin-right: 20px;
   margin-left: 20px;
   display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
