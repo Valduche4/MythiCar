@@ -86,6 +86,8 @@
   color: #F3EFF5;
   display: flex;
   justify-content: center;
+  border-bottom: 0.5px solid #F3EFF5;
+  padding-bottom: 10px;
 }
 
 .link-btn-event{
@@ -112,8 +114,25 @@
   margin-top: 0;
   font-weight: lighter;
   opacity: 0.9;
-  font-family: 'Fira Sans', sans-serif;
+  border-bottom: 0.5px solid #F3EFF5;
+  h3{
+    font-family: 'Fira Sans', sans-serif;
+  }
+  h5{
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #F3EFF5;
+    color: #0A2E36;
+    width: fit-content;
+    text-align: center;
+    padding: 1px 7px;
+    border-radius: 2px;
+  }
+}
 
+.address-two{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .description-event {

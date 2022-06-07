@@ -4,16 +4,14 @@
         <h2><%= @event.name %></h2>
     </div>
     <div class="name-event">
-      <h3>
         <div class="address-event">
-          Address: <br>
-          <%= @event.address %>
           <br>
+          <h3><%= @event.address %></h3>
           <br>
-          The <%= @event.start_date.day %> of <%= @event.start_date.strftime("%b") %> <%= @event.start_date.year %>
-          <br>
-          <br>
-          <%= @event.participations.count %> participants
+          <div class="address-two">
+            <h5>The <%= @event.start_date.day %> of <%= @event.start_date.strftime("%b") %> <%= @event.start_date.year %></h5>
+            <h5><%= @event.participations.count %> participants</h5>
+          </div>
         </div>
       </h3>
       <div class="link-event">
