@@ -1,8 +1,14 @@
-<div class="footer align-self-baseline border sticky-bottom">
+<div class="footer align-self-baseline sticky-bottom">
   <div class="footer-links">
-    <%= link_to image_tag("calendrier.jpg"), events_path, class: "nav-link" %>
-    <%= link_to image_tag("car5.jpg"), user_path(current_user), class: "nav-link" %>
-    <%= link_to image_tag("garage2.jpg"), garages_path, class: "nav-link"%>
+    <div class="un">
+      <%= link_to image_tag("calendrier.jpg"), events_path, class: "calendar-footer" %>
+    </div>
+    <div class="deux">
+      <%= link_to image_tag("oldtimer3.jpg"), user_path(current_user), class: "old-timer" %>
+    </div>
+    <div class="trois">
+      <%= link_to image_tag("point_map2.jpg"), garages_path, class: "point-footer"%>
+    </div>
   </div>
 </div>
 
