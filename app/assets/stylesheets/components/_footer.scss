@@ -10,6 +10,7 @@
   bottom: 0;
   width: 100%;
   color: #90BE6D;
+  z-index: 2;
 
 }
 .footer-links {
@@ -40,24 +41,24 @@
   // margin: none;
   img {
     width: 85px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
     // border: 1px solid black;
-    // padding-left: 50px;
-    // padding-right: 50px;
+    // padding-left: 40px;
+    // padding-right: 40px;
   }
 }
 
 .calendar-footer img {
   width: 40px;
-  margin-right: 50px;
+  margin-right: 40px;
   // border-right: 0.5 solid black !important;
 
 }
 
 .point-footer img {
   width: 40px;
-  margin-left: 50px;
+  margin-left: 40px;
   // border-left: 0.5 solid black !important;
 }
 
