@@ -1,6 +1,6 @@
 <div class="div2-garage">
-  <h2><%= garage.name %></h2>
+  <a href="https://www.google.be/maps/dir/BeCentral,+Cantersteen,+Bruxelles/Av.+G%C3%A9n%C3%A9ral+M%C3%A9decin+Derache+122,+1050+Ixelles/@50.8303416,4.3549614,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c3c47fd1e382f7:0xaf07bf72d3c7f131!2m2!1d4.3574884!2d50.845502!1m5!1m1!1s0x47c3c4daeb841521:0x504f1e48ae349e8b!2m2!1d4.3889856!2d50.8136924!3e0" target="_blank"><h2><%= garage.name %></h2></a>
   <p><%= garage.address %></p>
   <p>Spec : <%= garage.specialty %></p>
-  <a href="tel:+32479137700", class="text-decoration-none">☎<%= garage.phone_number %></a>
+  <a href="tel:+32479137700", id="tel-click" class="text-decoration-none">☎<%= garage.phone_number %></a>
 </div>
