@@ -48,7 +48,7 @@
                   <p><%= feature.spec %></p>
                 </div>
                 <div class="feature2">
-                  <p><%= feature.last_date %></p>
+                  <p><%= feature.last_date.day %>/<%= feature.last_date.month %>/<%= feature.last_date.year %></p>
                   <% if Date.today - feature.last_date >= 730%>
                     <p>🔴</p>
                   <% elsif Date.today - feature.last_date >= 365 %>
@@ -109,7 +109,7 @@
     </div>
 
     <div class="feature-car">
-      <h5><%= @car.model %>'s papers</h5>
+      <h5><%= @car.model %>'s papers <br><h6>Valid to</h6></h5>
         <% @car.papers.order('valid_to ASC').each do |paper| %>
           <a href="<%= car_paper_path(@car, paper) %>" class="text-decoration-none">
             <div class="feature">
@@ -117,7 +117,7 @@
                   <p><%= paper.name %></p>
                 </div>
                 <div class="feature2">
-                  <p><%= paper.valid_to %></p>
+                  <p><%= paper.valid_to.day %>/<%= paper.valid_to.month %>/<%= paper.valid_to.year %></p>
                   <% if paper.valid_to > Date.today %>
                     <p>🟢</p>
                   <% else %>
