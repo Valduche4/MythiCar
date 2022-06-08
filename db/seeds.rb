@@ -16,7 +16,7 @@ Event.destroy_all
 # user = User.create(username: "val", email: "hello@leo.com", password: "123456")
 
 user = User.new(email: "hello@leo.com", password: "123456")
-user.photo.attach(io: (URI.open("https://www.rtlboulevard.nl/sites/default/files/content/images/2020/05/12/avatar%201%20miljard%20dollar.jpg?itok=fcKwDgMY&offsetX=0&offsetY=0&cropWidth=1776&cropHeight=999&width=2048&height=1152&impolicy=dynamic")), filename: 'file.jpeg')
+user.photo.attach(io: (URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoS96_vETK55r95MRsFeB2f7T3S6W6UCsElsdeeOwljS2Ugdwyfo8w4FLzrmFF6VpdkUk&usqp=CAU")), filename: 'file.jpeg')
 user.save!
 
 car1 = Car.new(
