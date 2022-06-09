@@ -40,7 +40,7 @@
     </div>
 
     <div class="feature-car">
-      <h5><%= @car.model %>'s status</h5>
+      <h5><%= @car.model %>'s status <br><h6 class="due-date">Due date</h6></h5>
         <% @car.features.order('last_date ASC').each do |feature| %>
           <a class="text-decoration-none" data-toggle="modal" data-target="#modalFeature-<%= feature.id %>">
             <div class="feature">
@@ -109,7 +109,7 @@
     </div>
 
     <div class="feature-car">
-      <h5><%= @car.model %>'s papers <br><h6>Valid to</h6></h5>
+      <h5><%= @car.model %>'s papers <br><h6 class="valid-until">Valid until</h6></h5>
         <% @car.papers.order('valid_to ASC').each do |paper| %>
           <a href="<%= car_paper_path(@car, paper) %>" class="text-decoration-none">
             <div class="feature">
