@@ -40,7 +40,12 @@
     </div>
 
     <div class="feature-car">
-      <h5><%= @car.model %>'s status <br><h6 class="due-date">Due date</h6></h5>
+      <div class="feature-car-title">
+        <h5><%= @car.model %>'s status <br><h6 class="due-date">Due date</h6></h5>
+        <button type="button" class="buton-car-plus-un text-decoration-none" data-toggle="modal" data-target="#newFeatureModal">
+          +
+        </button>
+      </div>
         <% @car.features.order('last_date ASC').each do |feature| %>
           <a class="text-decoration-none" data-toggle="modal" data-target="#modalFeature-<%= feature.id %>">
             <div class="feature">
@@ -81,9 +86,6 @@
           </div>
         <% end %>
       <div class="div-btn-car">
-        <button type="button" class="buton-car text-decoration-none" data-toggle="modal" data-target="#newFeatureModal">
-          Add a feature
-        </button>
       </div>
     </div>
 
@@ -109,7 +111,12 @@
     </div>
 
     <div class="feature-car">
-      <h5><%= @car.model %>'s papers <br><h6 class="valid-until">Valid until</h6></h5>
+      <div class="feature-car-title">
+        <h5><%= @car.model %>'s papers <br><h6 class="valid-until">Valid until</h6></h5>
+        <button type="button" class="buton-car-plus-deux text-decoration-none" data-toggle="modal" data-target="#newPaperModal">
+          +
+        </button>
+      </div>
         <% @car.papers.order('valid_to ASC').each do |paper| %>
           <a href="<%= car_paper_path(@car, paper) %>" class="text-decoration-none">
             <div class="feature">
@@ -128,9 +135,6 @@
           </a>
         <% end %>
       <div class="div-btn-car">
-        <button type="button" class="buton-car text-decoration-none" data-toggle="modal" data-target="#newPaperModal">
-          Add a paper
-        </button>
       </div>
     </div>
 
@@ -167,10 +171,11 @@
     </div>
 
   </div>
-  <div class="d-flex justify-content-between" >
+  <%# <div class="d-flex justify-content-between" >
     <%= link_to "Home", user_path(current_user), class: "buton-home text-decoration-none" %>
-    <%= link_to 'Delete this car', car_path(@car), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp text-decoration-none"   %>
-  </div>
+    <%# <%= link_to 'Delete this car', car_path(@car), method: :delete, data: { confirm: "Are you sure?" }, class: "buton-car-supp text-decoration-none"   %>
+  <%# </div> %> %> %>
+  <br><br><br>
 </div>
 
 
