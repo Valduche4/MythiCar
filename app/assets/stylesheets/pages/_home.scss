@@ -48,7 +48,7 @@
 .btn-homepage-sign {
   color: white;
   font-family: 'Fira Sans', sans-serif;
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 10px;
   border-radius: 30px;
 }
@@ -62,7 +62,7 @@
 .btn-homepage-cars a {
   color: white;
   font-family: 'Fira Sans', sans-serif;
-  border: 1px solid white;
+  border: 3px solid white;
   padding: 10px;
   border-radius: 30px;
   text-decoration: none;
@@ -94,24 +94,27 @@
   background-color: #0A2E36;
   padding: 40px;
   opacity: .9;
-  margin: 45px;
+  margin-bottom: 45px;
+  margin-right: 45px;
+  margin-left: 45px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   h3 {
     font-family: 'Fira Sans', sans-serif;
     font-weight: bolder;
+    // font-size: 14px;
   }
 }
 .card-homepage-text {
   h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bolder;
     color: #F3EFF5;
-    opacity: .9;
-    filter: brightness(90%);
+    opacity: 1;
+    filter: brightness(100%);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
   p {
-    font-size: 16px;
+    font-size: 17px;
     color: #F3EFF5;
     font-weight: bold;
     padding-top: 15px;
